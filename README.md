@@ -1,15 +1,12 @@
 # A Comparison of LLM Observability Tools
----
 
 This project investigates various LLM observability platforms, focusing on issues of reliability and robustness. Specifically, we explore the broad functionalities of various providers, and benchmark their hallucination detection tools against each other and current research methods. We leave in depth investigation of robustness (defense against prompt injections, jailbreaking) to future work.
 
 ## Exploration
----
 
 We investigate the broad functionalities of various providers:
 
 ## Hallucination Detection
----
 
 ### Benchmarks within Industry
 
