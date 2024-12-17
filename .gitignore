@@ -1,0 +1,3 @@
+venv/
+#all your environment variables
+.env

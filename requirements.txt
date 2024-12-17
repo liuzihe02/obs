@@ -1,0 +1,7 @@
+datasets
+openai
+arize-phoenix>=4.29.0
+openai
+nest_asyncio
+httpx<0.28
+pandas
