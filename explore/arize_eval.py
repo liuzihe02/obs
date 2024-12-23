@@ -4,74 +4,92 @@ from datasets import load_dataset
 import sys
 from pathlib import Path
 
+# arize imports
+import nest_asyncio
+from phoenix.evals import HallucinationEvaluator, OpenAIModel, QAEvaluator, run_evals
+
 # Add parent directory to path
 sys.path.append(str(Path(__file__).parent.parent))
 from config import DATA_DIR
+
+# load in environment variables
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # %% prepare dataset
 
 qa_data = load_dataset("json", data_files=str(DATA_DIR / "qa_data.json"))
 
 # Convert the huggingface data to pandas
-df = qa_data["train"].to_pandas()
+qa_df = qa_data["train"].to_pandas()
 
 # at this point, this is in "knowledge, question, right_answer, hallucinated answer"
-# we will take the first n rows,
+# we will take the first n rows, then split into 2, with the first half being right_answer and second half being hallucinated
 
-# %% Prepare dataset
+qa_df = qa_df.head(10)
 
-df = pd.DataFrame(
-    [
-        {
-            "reference": "The Eiffel Tower is located in Paris, France. It was constructed in 1889 as the entrance arch to the 1889 World's Fair.",
-            "query": "Where is the Eiffel Tower located?",
-            "response": "The Eiffel Tower is located in Paris, France.",
-        },
-        {
-            "reference": "The Great Wall of China is over 13,000 miles long. It was built over many centuries by various Chinese dynasties to protect against nomadic invasions.",
-            "query": "How long is the Great Wall of China?",
-            "response": "The Great Wall of China is approximately 13,171 miles (21,196 kilometers) long.",
-        },
-        {
-            "reference": "The Amazon rainforest is the largest tropical rainforest in the world. It covers much of northwestern Brazil and extends into Colombia, Peru and other South American countries.",
-            "query": "What is the largest tropical rainforest?",
-            "response": "The Amazon rainforest is the largest tropical rainforest in the world. It is home to the largest number of plant and animal species in the world.",
-        },
-        {
-            "reference": "Mount Everest is the highest mountain on Earth. It is located in the Mahalangur Himal sub-range of the Himalayas, straddling the border between Nepal and Tibet.",
-            "query": "Which is the highest mountain on Earth?",
-            "response": "Mount Everest, standing at 29,029 feet (8,848 meters), is the highest mountain on Earth.",
-        },
-        {
-            "reference": "The Nile is the longest river in the world. It flows northward through northeastern Africa for approximately 6,650 km (4,132 miles) from its most distant source in Burundi to the Mediterranean Sea.",
-            "query": "What is the longest river in the world?",
-            "response": "The Nile River, at 6,650 kilometers (4,132 miles), is the longest river in the world.",
-        },
-        {
-            "reference": "The Mona Lisa was painted by Leonardo da Vinci. It is considered an archetypal masterpiece of the Italian Renaissance and has been described as 'the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world'.",
-            "query": "Who painted the Mona Lisa?",
-            "response": "The Mona Lisa was painted by the Italian Renaissance artist Leonardo da Vinci.",
-        },
-        {
-            "reference": "The human body has 206 bones. These bones provide structure, protect organs, anchor muscles, and store calcium.",
-            "query": "How many bones are in the human body?",
-            "response": "The adult human body typically has 256 bones.",
-        },
-        {
-            "reference": "Jupiter is the largest planet in our solar system. It is a gas giant with a mass more than two and a half times that of all the other planets in the solar system combined.",
-            "query": "Which planet is the largest in our solar system?",
-            "response": "Jupiter is the largest planet in our solar system.",
-        },
-        {
-            "reference": "William Shakespeare wrote 'Romeo and Juliet'. It is a tragedy about two young star-crossed lovers whose deaths ultimately reconcile their feuding families.",
-            "query": "Who wrote 'Romeo and Juliet'?",
-            "response": "The play 'Romeo and Juliet' was written by William Shakespeare.",
-        },
-        {
-            "reference": "The first moon landing occurred in 1969. On July 20, 1969, American astronauts Neil Armstrong and Edwin 'Buzz' Aldrin became the first humans to land on the moon as part of the Apollo 11 mission.",
-            "query": "When did the first moon landing occur?",
-            "response": "The first moon landing took place on July 20, 1969.",
-        },
-    ]
+# Create two separate dataframes
+df_right = pd.DataFrame(
+    {
+        "reference": qa_df["knowledge"],
+        "query": qa_df["question"],
+        "response": qa_df["right_answer"],
+    }
 )
-df.head()
+
+df_hallucinated = pd.DataFrame(
+    {
+        "reference": qa_df["knowledge"],
+        "query": qa_df["question"],
+        "response": qa_df["hallucinated_answer"],
+    }
+)
+
+# Concatenate vertically (stack on top of each other)
+# top half is right, bottom half is hallucinated
+qa_df = pd.concat([df_right, df_hallucinated], axis=0, ignore_index=True)
+
+# %% Evaluate and Log Results
+
+nest_asyncio.apply()  # This is needed for concurrency in notebook environments
+
+# change the model ehre
+eval_model = OpenAIModel(model="gpt-4o-mini")
+
+# Define your evaluators
+hallucination_evaluator = HallucinationEvaluator(eval_model)
+qa_evaluator = QAEvaluator(eval_model)
+
+# We have to make some minor changes to our dataframe to use the column names expected by our evaluators
+# for `hallucination_evaluator` the input df needs to have columns 'output', 'input', 'context'
+# for `qa_evaluator` the input df needs to have columns 'output', 'input', 'reference'
+qa_df["context"] = qa_df["reference"]
+qa_df.rename(columns={"query": "input", "response": "output"}, inplace=True)
+assert all(
+    column in qa_df.columns for column in ["output", "input", "context", "reference"]
+)
+
+# Run the evaluators, each evaluator will return a dataframe with evaluation results
+# We upload the evaluation results to Phoenix in the next step
+
+# uses simple prompt attached to the query/reference/answer
+hallucination_eval_df, qa_eval_df = run_evals(
+    dataframe=qa_df,
+    evaluators=[hallucination_evaluator, qa_evaluator],
+    provide_explanation=True,
+)
+
+# %% Analyze results
+results_df = qa_df.copy()
+results_df["hallucination_eval"] = hallucination_eval_df["label"]
+results_df["hallucination_explanation"] = hallucination_eval_df["explanation"]
+results_df["qa_eval"] = qa_eval_df["label"]
+results_df["qa_explanation"] = qa_eval_df["explanation"]
+results_df.head()
+
+# %%manual exploration
+print(results_df["output"][10])
+
+# %%

@@ -1,7 +1,20 @@
+# #install humanloop separately
+# humanloop
+
 datasets
 openai
 arize-phoenix>=4.29.0
+arize-phoenix-otel
 openai
 nest_asyncio
 httpx<0.28
 pandas
+python-dotenv
+openinference-instrumentation-langchain
+langchain
+langchain_openai
+langchain-community
+#this is galileo
+promptquality
+faiss-cpu
+ipywidgets
