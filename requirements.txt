@@ -18,3 +18,7 @@ langchain-community
 promptquality
 faiss-cpu
 ipywidgets
+traceloop-sdk
+ragas
+google-generativeai
+vertexai
