@@ -1,7 +1,8 @@
 # #install humanloop separately
 # humanloop
 
-datasets
+#datasets for compatibility with ARES
+datasets==2.12.0
 openai
 arize-phoenix>=4.29.0
 arize-phoenix-otel
