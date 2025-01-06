@@ -1,3 +1,6 @@
 venv/
 #all your environment variables
 .env
+
+#checkpoints
+*checkpoints/
