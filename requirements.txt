@@ -22,3 +22,6 @@ traceloop-sdk
 ragas
 google-generativeai
 vertexai
+#ARES
+ares-ai==0.6.6
+ragas
