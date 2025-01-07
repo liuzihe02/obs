@@ -1,0 +1,2031 @@
+,id,passage,question,answer,label,source_ds,eval
+0,12603,"passage 1:Greek Meaning: The name Teresa is a Greek baby name. In Greek the meaning of the name Teresa is: Reap; from Therasia. American Meaning: The name Teresa is an American baby name.In American the meaning of the name Teresa is: Reap; from Therasia. Italian Meaning: The name Teresa is an Italian baby name. In Italian the meaning of the name Teresa is: Harvester.Spanish Meaning: The name Teresa is a Spanish baby name. In Spanish the meaning of the name Teresa is: Name of two popular saints 'Teresa of Avila' and 'Therese of Lisieux'.he name Teresa is an Italian baby name. In Italian the meaning of the name Teresa is: Harvester. Spanish Meaning: The name Teresa is a Spanish baby name. In Spanish the meaning of the name Teresa is: Name of two popular saints 'Teresa of Avila' and 'Therese of Lisieux'.
+
+passage 2:The name Theresa is a Greek baby name. In Greek the meaning of the name Theresa is: Reaper; from Therasia.American Meaning: The name Theresa is an American baby name. In American the meaning of the name Theresa is: Reaper; from Therasia.he name Theresa is a Greek baby name. In Greek the meaning of the name Theresa is: Reaper; from Therasia.
+
+passage 3:Etymology & Historical Origin-Teresa. Teresa is the Spanish, Portuguese and Italian form of Theresa, a name of uncertain etymology. It is thought to come from the Greek “therizein” meaning “to harvest, harvester” or from the Greek “theros” meaning “summer”.Therasia is also the name of a Greek island.Usage of Teresa as a female given name can find its roots in Spain and Portugal pre-Middle Ages.t is thought to come from the Greek “therizein” meaning “to harvest, harvester” or from the Greek “theros” meaning “summer”. Therasia is also the name of a Greek island. Usage of Teresa as a female given name can find its roots in Spain and Portugal pre-Middle Ages.
+
+",teresa name meaning,"Based on the provided passages, the meaning of the name Teresa is:
+
+* In Greek, the meaning of Teresa is ""Reap; from Therasia.""
+* In American, the meaning of Teresa is ""Reaper; from Therasia.""
+* In Italian, the meaning of Teresa is ""Harvester.""
+* In Spanish, the meaning of Teresa is ""Name of two popular saints 'Teresa of Avila' and 'Therese of Lisieux.'""
+
+Therefore, I can confidently answer the question.",PASS,RAGTruth,1
+1,14887,"passage 1:There's no getting texts back after you delete them. Deleting an Entire Text Message Conversation. 1  To delete an entire iPhone SMS conversation, tap the Messages app (it's on your home screen, unless you re-arranged your icons). 2  If you were in a conversation when you last used the app, you'll see it.3  Find the conversation you want to delete. 4  If you swiped across the conversation, a Delete button 5  ... There's no getting texts back after you delete them. Deleting an Entire Text Message Conversation. 1  To delete an entire iPhone SMS conversation, tap the Messages app (it's on your home screen, unless you re-arranged your icons). 2  If you were in a conversation when you last used the app, you'll see it.
+
+passage 2:There are 3 ways for you to recover deleted photos from your iPhone: Directly recover photos from your iPhone , scan and extract your iTunes backup file , or  recover photos from iCloud  to get iPhone photos back. Next, let's check detailed steps below. Step 1.hoose the deleted iPhone photos and click “ Recover ” button to get them back to your computer. Step 1. Run iPhone Data Recovery, choose ” Recover from iCloud Backup File ” mode. Then sign in your iCloud with your account and password as below.
+
+passage 3:Note: You can recover deleted photos, videos, messages, contacts, etc. from iPhone 4/3GS directly. If your iPhone is iPhone 6s/6s Plus/6/6 Plus/5s/5c/5/4S, it supports to recover Messages, Contacts, Call History, Calendar, Notes, Reminders, Safari Bookmark from iPhone directly. Step 2.hoose the deleted iPhone photos and click “ Recover ” button to get them back to your computer. Step 1. Run iPhone Data Recovery, choose ” Recover from iCloud Backup File ” mode. Then sign in your iCloud with your account and password as below.
+
+",how to find pictures you deleted on your messaging on iphone,Unable to answer based on given passages.,PASS,RAGTruth,0
+2,14367,"passage 1:Be sure to check inside and behind his ears and around his eyes, all favorite tick hiding places. To remove a tick, follow these steps: Use a pair of tweezers to grasp the head of the tick where it attaches to the skin. Wear gloves if you plan to use your fingers to remove the tick.Pull on the tick gently and steadily. If you yank the tick away from your dog too quickly, you’ll leave part of the tick’s mouth behind, which can cause an infection.e sure to check inside and behind his ears and around his eyes, all favorite tick hiding places. To remove a tick, follow these steps: Use a pair of tweezers to grasp the head of the tick where it attaches to the skin. Wear gloves if you plan to use your fingers to remove the tick.
+
+passage 2:The best way to prevent ticks from attaching to your dog is by the regular use of tick control products. Your veterinarian can advise you about the best product for your dog and your situation. Your veterinarian is also aware of diseases that are common in your area and can pose a risk to your dog.icks can attach to and feed on humans. The skin where ticks attach to humans can become red and irritated. Ticks that transmit diseases to your dog can also transmit many of the same diseases to people. It is important to realize that people do not get these diseases from their dogs.
+
+passage 3:Fleas are the most common cause of skin disease in dogs and cats. When a flea bites, it injects saliva into your pet’s skin. This may trigger an allergic reaction. Signs include intense itching, hair loss (especially just in front of the tail), scabs, and red, irritated skin, which may lead to skin infections.lea and tick shampoos are mainly useful for killing the fleas and ticks that are already on your pet. They don’t work as well to prevent ticks. Make sure you get the right kind. Some products for dogs can kill cats.
+
+",how to get rid of ticks from dogs,"Based on the provided passages, here's how to get rid of ticks from dogs:
+
+1. Check inside and behind the dog's ears and around its eyes, which are common hiding places for ticks. (Passage 1)
+2. Use tick control products recommended by a veterinarian to prevent ticks from attaching to the dog. (Passage 2)
+3. Remove ticks from the dog using a pair of tweezers to grasp the head of the tick where it attaches to the skin. (Passage 1)
+
+Unable to answer based on the given passages whether there are any specific products or methods for getting rid of ticks from dogs that are already infested.",PASS,RAGTruth,0
+3,14502,"passage 1:There are many reasons why goodwill is important in business.  Goodwill will increase your customer base and retain old clients,  attract investors and attract future buyers….
+
+passage 2:There are many reasons why goodwill is important in business. Goodwill will increase your customer base and retain old clients, attract investors and attract future buyers. There are many reasons why goodwill is important in business. Goodwill will increase your customer base and retain old clients, attract investors and attract future buyers.
+
+passage 3:When a business has provided good service or product to their customers, the customers develop a trust for the business. They become repeat customers and they tell others what … a good experience they had. That creates a business asset called goodwill, in other words the good will of the customers toward the business. Answer 2 The goodwill of a business is the whole advantage of the reputation and connection with customers together with the circumstances whether of habit or otherwise, which tend to make that connection permanent. It represents in connection with any business or business product the value of the attraction to the customers which the name and reputation possesses.
+
+",what is company goodwill and why important,"Company goodwill is a business asset that is created when a business provides good service or product to their customers, leading to customer trust. This trust results in repeat customers and positive word-of-mouth, which can increase a company's customer base and retain old clients. Goodwill represents the value of the attraction to the customers which the name and reputation of the business possesses. It is important because it can attract investors and future buyers, and it is an advantage of the reputation and connection with customers which tends to make that connection permanent.",PASS,RAGTruth,1
+4,14857,"passage 1:So ask your My Singing Monsters question for iPhone-iPod and get answers from real gamers or answer questions and share your insights and experience with the rest of the gaming community.nswer from: Guest. You need to breed a Maw with a Potbelly... There are other combinations also.. As mentioned by precious poster, you need to combine correct elements in order to breed your desired monster (in this instance, you need Water, Snow & Leaf to get Bowgart).
+
+passage 2:My Singing Monsters: Shugabeats Monster breeding guide. You must obtain the Shugabush Monster from the other island. Doing this will turn your Shugabush Monsters into an egg then you will need to hatch them and then buy the breeding structure then breed them using the combination below.o breed the Shugabeats, you need to use the Shugabush and the Furcorn in the Shugabush Island breeding structure to get this monster. BREEDING NOTES: Keep in mind that breeding the monsters left or right does not matter.
+
+passage 3:Generation 2 My Singing Monsters Combo Breeding. Generation 2 monsters can be created by breeding two Generation 1 monsters or combination of a basic and a Generation 1 monster. Either breeding method is not 100% guarantee.Simply keep on trying if you fail to get the breed that you are looking for.thereal My Singing Monsters Breed Combo. Ethereal monsters and island are special additions to the game on My Singing Monsters’ 1 year anniversary. Ethereal monsters possess special elements: Plasma, Mech, Shadow, Crystal, and Poison. Basic Ethereal monsters are consider very rare.
+
+",how do i breed a shugabeats in my singing monsters,"To breed a Shugabeats in My Singing Monsters, you need to obtain the Shugabush Monster from the other island and breed it with the Furcorn in the Shugabush Island breeding structure.",PASS,RAGTruth,1
+5,15345,"passage 1:Outdoor hiking has a myriad of benefits for both the body and the mind. Hiking is inexpensive and easy to start, so you can participate no matter how fit you currently are. Most people live within driving distance of wonderful hiking spots and discovering these places is a good way of getting to know an area. Here's a look at some of the benefits of hiking. Outdoor Hiking Promotes Mental Health. Hiking is much more varied than many other types of exercise, particularly those undertaken in a gym.
+
+passage 2:Being exposed to sunshine will also increase your levels of vitamin D. Hiking is a cardiovascular activity, depending on how hard you push yourself during a hike, and thus has benefits for your cardiovascular system, such as reducing the chances of heart disease, and increasing your overall fitness.
+
+passage 3:Research shows that hiking has a positive impact on combating the symptoms of stress and anxiety, says Gregory A. Miller, PhD, president of the American Hiking Society. Being in nature is ingrained in our DNA, and we sometimes forget that.
+
+",benefits of hiking as a hobby facts,"Based on the provided passages, here are the benefits of hiking as a hobby:
+
+1. Promotes mental health: Hiking is a form of outdoor recreation that promotes mental well-being by exposing individuals to nature and allowing them to disconnect from their daily routines (Passage 1).
+2. Increases vitamin D levels: Spending time outdoors while hiking exposes individuals to sunlight, which helps to increase vitamin D levels (Passage 2).
+3. Improves cardiovascular health: Hiking is a cardiovascular activity that can help reduce the risk of heart disease and improve overall fitness (Passage 2).
+4. Combats stress and anxiety: Research suggests that hiking has a positive impact on reducing symptoms of stress and anxiety (Passage 3).
+
+Unable to answer based on given passages. The passages do not provide information on the following benefits of hiking:
+
+* Building muscle strength and endurance
+* Improving balance and coordination
+* Enhancing cognitive function
+* Reducing the risk of chronic diseases such as obesity and diabetes
+
+The passages primarily focus on the mental and physical health benefits of hiking, but do not provide information on other potential advantages of the activity.",FAIL,RAGTruth,0
+6,15485,"passage 1:· just now. Report Abuse. If you used third-party apps to get into snapchat and they warned you more them 4 times then yes your account is locked :(they warned me 3 times, I changed my password and it did unlock it but on the 4th time I tried and nothing.I'm still waiting though. nancy · 8 months ago. Thumbs up.eport Abuse. My snaps from people started not to download so I logged out I put my username and password in and it was saying I am using third party applications what is third party user and how do I get back into my account. nicole · 9 months ago. Thumbs up. 0. Thumbs down. 0. 1 comment. Loading ...
+
+passage 2:Snapchat cannot guarantee your security if you use these third party apps, so they may lock your Snapchat account. They will usually send you a message before they do so. However, if you have been locked out of your account and don’t know why, using third party apps may be a reason.If you are using third party apps, at the moment the only thing you can do is to uninstall that app and wait for an official Snapchat app to appear for the Windows Phone.ome people have come back to an old account to find it’s been locked. Others have received an email from Snapchat warning them about third party apps, before being locked out. Also see: How To Use Google Chrome Without Internet Connection. There are many reasons why people are getting locked out of Snapchat.
+
+passage 3:The Snapchat app is used on an iPhone. Snapchat allows users' messages to vanish after seconds. (Photo by Peter Macdiarmid/Getty Images) | Peter Macdiarmid via Getty Images. We've noticed that you're using a third-party application to access Snapchat, putting yourself (and possibly your friends) at risk.ast month, 200,000 private Snapchat photos were leaked via one of the photo messaging app's many third-party apps. Now, the company is taking steps to punish individuals who use those apps.
+
+",why is my snapchat temporarily locked,"Based on the given passages, it appears that your Snapchat account may be temporarily locked due to using third-party apps to access the service. Snapchat does not support or condone the use of third-party apps, as they can pose a security risk to users' accounts. The company has been known to lock out accounts that have been accessed using third-party apps, and may send a message warning users before doing so.
+
+To regain access to your account, you may need to uninstall any third-party apps you have installed and wait for an official Snapchat app to become available for your device. Additionally, it's recommended to change your password and ensure that you're using the latest version of the Snapchat app.
+
+If you're still having trouble accessing your account, you may want to contact Snapchat support for further assistance.",FAIL,RAGTruth,0
+7,16510,"passage 1:It is when you have muscle, and when you have a low enough body fat percentage so that this muscle can be seen. So, the less fat you have covering your muscles, the more “tone” and “definition” you will appear to have. The fatter you are, the less tone/definition you’ll see.
+
+passage 2:Being toned or being defined means only one thing. It is when you have muscle, and when you have a low enough body fat percentage so that this muscle can be seen. So, the less fat you have covering your muscles, the more “tone” and “definition” you will appear to have.
+
+passage 3:Maybe you want to tone up your legs, or your stomach, or your arms, or your chest, or your back or your shoulders. Hell, maybe you want to tone up your entire body.
+
+",why am i not getting a toned body if i do extersice every day,"Based on the provided passages, here's my answer:
+
+If you are not getting a toned body despite exercising every day, it could be due to two reasons:
+
+1. Lack of muscle mass: As passage 1 states, having muscle is essential for having a toned body. If you don't have enough muscle mass, no amount of exercise will give you a toned appearance. You may need to focus on building muscle through strength training exercises before worrying about reducing body fat.
+2. High body fat percentage: Passage 2 emphasizes that having a low body fat percentage is necessary to achieve a toned look. If you have a high body fat percentage, it will be harder to see your muscle definition, regardless of how much you exercise. To reduce body fat, you may need to adjust your diet and focus on burning fat through cardiovascular exercises.
+
+Therefore, to get a toned body, you may need to prioritize building muscle through strength training and reducing body fat through a balanced diet and cardio exercises.",FAIL,RAGTruth,0
+8,13442,"passage 1:If you have oil stains from your car on a concrete driveway, there are a few different ways to remove them.In this video I compare using oven cleaner, goop hand cleaner, and carburetor cleaner.lease try again later. Here's how to remove oil stains from concrete. If you have oil stains from your car on a concrete driveway, there are a few different ways to remove them. In this video I compare using oven cleaner, goop hand cleaner, and carburetor cleaner.
+
+passage 2:5. Clean the area with oil stains with water from a hose or bucket. Prior to cleaning the pavement wash off any dirt and debris that is in the way of the oil stain on your driveway. However, do not use a high pressure hose to clean off the affected area, because you could end up pushing the oil deeper into the pavement.epending on what kind of stain you have you will use different methods for cleaning the oil off your driveway. 1  If you have an oil stain that is still fresh or if you have a small and stubborn stain, you may want to use the poultice method to get out your stain.
+
+passage 3:No matter how hard you try, oil stains on your concrete driveway are nearly impossible to avoid. There are several methods for cleaning these stains, though the size of the oil spill and length of time the stain has had to set will determine the process for removal.irst, apply a commercial-grade cleaner to the oil stain and scrub with a brush or broom. Then add detergent to your pressure washer and begin spraying. Move at an even pace and keep the nozzle at the same distance from the surface of the concrete at all times to ensure that no streaking occurs.
+
+",oil stain on concrete driveway,"To remove an oil stain from a concrete driveway, one can use a combination of water, a commercial-grade cleaner, and a brush or broom to scrub the area. Additionally, applying a poultice method or using a high-pressure hose can also be effective depending on the type and size of the stain. It is important to avoid using a high-pressure hose as it may push the oil deeper into the pavement.",FAIL,RAGTruth,0
+9,14860,"passage 1:So ask your My Singing Monsters question for iPhone-iPod and get answers from real gamers or answer questions and share your insights and experience with the rest of the gaming community.nswer from: Guest. You need to breed a Maw with a Potbelly... There are other combinations also.. As mentioned by precious poster, you need to combine correct elements in order to breed your desired monster (in this instance, you need Water, Snow & Leaf to get Bowgart).
+
+passage 2:My Singing Monsters: Shugabeats Monster breeding guide. You must obtain the Shugabush Monster from the other island. Doing this will turn your Shugabush Monsters into an egg then you will need to hatch them and then buy the breeding structure then breed them using the combination below.o breed the Shugabeats, you need to use the Shugabush and the Furcorn in the Shugabush Island breeding structure to get this monster. BREEDING NOTES: Keep in mind that breeding the monsters left or right does not matter.
+
+passage 3:Generation 2 My Singing Monsters Combo Breeding. Generation 2 monsters can be created by breeding two Generation 1 monsters or combination of a basic and a Generation 1 monster. Either breeding method is not 100% guarantee.Simply keep on trying if you fail to get the breed that you are looking for.thereal My Singing Monsters Breed Combo. Ethereal monsters and island are special additions to the game on My Singing Monsters’ 1 year anniversary. Ethereal monsters possess special elements: Plasma, Mech, Shadow, Crystal, and Poison. Basic Ethereal monsters are consider very rare.
+
+",how do i breed a shugabeats in my singing monsters,"Based on the given passages, here's how you can breed a Shugabeats in My Singing Monsters:
+
+To breed a Shugabeats, you need to use the Shugabush and the Furcorn in the Shugabush Island breeding structure. Specifically, you need to combine the Shugabush and Furcorn in the breeding structure to get this monster.
+
+As mentioned in passage 2, breeding the monsters left or right does not matter. However, it's important to note that breeding is not a guaranteed process, and you may need to try multiple times to successfully breed the Shugabeats.
+
+Additionally, it's worth mentioning that the Shugabeats is a Generation 2 monster, so you will need to have both a Generation 1 monster and another monster of any level to create it. If you don't have a Generation 1 monster, you can use a basic monster and a Generation 1 monster to create a Generation 2 monster.
+
+Finally, it's important to note that the breeding process can be affected by the elements of the monsters being bred. For example, the Shugabeats possesses the Water element, so breeding it with a monster that has the Water element will increase the chances of getting a Shugabeats as an offspring.",FAIL,RAGTruth,0
+10,halueval-9504," He served in the Cabinet of Governor Chris Christie as New Jersey Commissioner of Education until he was dismissed on August 27, 2010. His second and final term ends on January 16, 2018.",Bret Schundler served in the cabinet of a New Jersey governor whose term ended in what year?,2018,PASS,halueval,0
+11,halueval-4681," The group is known for its involvement with the publication of the investigative books ""Clinton Cash: The Untold Story of How and Why Foreign Governments and Businesses Helped Make Bill and Hillary Rich"" and ""Bush Bucks: How Public Service and Corporations Helped Make Jeb Rich"".Clinton Cash: The Untold Story of How and Why Foreign Governments and Businesses Helped Make Bill and Hillary Rich is a 2015 ""New York Times"" bestselling book by Peter Schweizer in which he investigates donations made to the Clinton Foundation by foreign entities, paid speeches made by Bill and Hillary Clinton, and the state of the Clintons' finances since leaving the White House in 2001.","The Government Accountability Institute (GAI) is a conservative nonprofit investigative research organization located in Tallahassee, Florida, The group is known for its involvement with the publication of the investigative books ""Clinton Cash: The Untold Story of How and Why Foreign Governments and Businesses Helped Make Bill and Hillary Rich"", Clinton Cash: The Untold Story of How and Why Foreign Governments and Businesses Helped Make Bill and Hillary Rich is  a ""New York Times"" bestselling book, released in which year?",2015,PASS,halueval,1
+12,halueval-7368,"Eliot Higgins (born 1979), who previously used the pseudonym Brown Moses, is a British citizen journalist and blogger, known for using open sources and social media to investigate the Syrian Civil War, 2014–15 Russian military intervention in Ukraine and the downing of Malaysia Airlines Flight 17.Malaysia Airlines Flight 17 (MH17/MAS17) was a scheduled passenger flight from Amsterdam to Kuala Lumpur that was shot down on 17 July 2014 while flying over eastern Ukraine, killing all 283 passengers and 15 crew on board.","How many people died in the downing of the flight investigated by Eliot Higgins, the British citizen journalist and blogger?",283 passengers and 15 crew,PASS,halueval,1
+13,halueval-2478,"Life of Kylie (LOK) is an American reality television series starring Kylie Jenner. She is best known for starring in the E! reality television series ""Keeping Up with the Kardashians"" since age nine, her eponymous brand of cosmetics, and her large social media presence.","Life of Kylie is an American reality television series starring Kylie Jenner,  best known for starring in the E! reality television series ""Keeping Up with the Kardashians"" since what young age?",nine,PASS,halueval,1
+14,halueval-6117,"Jimmie Ross is an American rock guitarist and vocalist who is best known for being a member of Pittsburgh band the Jaggerz, known for their 1970 hit ""The Rapper"".Jasbinder Singh ""Jas"" Mann (born 24 April 1971) is a British songwriter, musician, singer, record producer and film producer.",What do Jimmie Ross and Jas Mann have in common?,singer,PASS,halueval,0
+15,halueval-2039,Hottonia is a genus of aquatic flowering plants in the family Primulaceae.Othonna is a genus of African plants in the sunflower family.,Are both Hottonia and Othonna geniuses of plants?,"No, Hottonia is a genius of aquatic plants while Othonna is a genius of land plants.",FAIL,halueval,0
+16,halueval-5927," Emcee Slug states in the liner notes that he and producer Ant decided to call this CD ""Sad Clown Bad Dub II"" to preemptively head off any criticism of the recording's sound quality.Sean Michael Daley (born September 7, 1972), better known by his stage name Slug, is an American rapper from Minneapolis, Minnesota.","What is the real name of the person who decided on the CD name ""Sad Clown Bad Dub II"" along with the producer, Ant?","The real name of the person who decided on the CD name ""Sad Clown Bad Dub II"" along with the producer, Ant is Michael Daley Slug.",FAIL,halueval,0
+17,halueval-3530," He is probably best known for portraying the late comedian Bill Hicks in his one-man show, ""Bill Hicks: Slight Return"".William Melvin Hicks (December 16, 1961 – February 26, 1994) was an American stand-up comedian, social critic, satirist, and musician.",Chas Early is best known for portraying a comedian born in what year?,Chas Early portrayed a comedian from the 1950s.,FAIL,halueval,0
+18,halueval-1497," The team was coached by Howard Schnellenberger and played their home games at Lockhart Stadium in Fort Lauderdale, Florida.Howard Leslie Schnellenberger (born March 16, 1934) is a retired American football coach with long service at both the professional and college levels.","The 2005 Florida Atlantic University Owls football team represented Florida Atlantic University in the 2005 NCAA Division I-A football season, the team was coached by Howard Leslie Schnellenberger, an retired football coach, of which nationality, with long service at both the professional and college levels?",Howard Schnellenberger's nationality is Canadian.,FAIL,halueval,0
+19,halueval-6446,"Ana-Maria Yanakieva (Bulgarian: Ана-Мария Янакиева , born 5 August 1998) is a Bulgarian singer from the music label Virginia Records, the official representative of Sony Music Entertainment for Bulgaria. She is also a scholar of Dimitar Berbatov Foundation.Dimitar Ivanov Berbatov (Bulgarian: Димитър Иванов Бербатов ] ; born 30 January 1981) is a Bulgarian professional footballer who plays for Indian Super League club Kerala Blasters. A striker, he captained the Bulgaria national team from 2006 to 2010, and is the country's all-time leading goalscorer.","For which accomplishment in Bulgarian football is the professional footballer who plays for Indian Super League club Kerala Blasters, and whose name is used for the Foundation where Ana-Maria Yanakieva, a singer from the music label Virginia Records was a scholar, considered the all-time leader?",Dimitar Berbatov's collaboration with Ana-Maria Yanakieva in a music video.,FAIL,halueval,0
+20,25886616,"The transcription factor Ecotropic Virus Integration site 1 (EVI1) regulates cellular proliferation, differentiation, and apoptosis, and its overexpression contributes to an aggressive course of disease in myeloid leukemias and other malignancies. Notwithstanding, knowledge about the target genes mediating its biological and pathological functions remains limited. We therefore aimed to identify and characterize novel EVI1 target genes in human myeloid cells.
+U937T_EVI1, a human myeloid cell line expressing EVI1 in a tetracycline regulable manner, was subjected to gene expression profiling. qRT-PCR was used to confirm the regulation of membrane-spanning-4-domains subfamily-A member-3 (MS4A3) by EVI1. Reporter constructs containing various parts of the MS4A3 upstream region were employed in luciferase assays, and binding of EVI1 to the MS4A3 promoter was investigated by chromatin immunoprecipitation. U937 derivative cell lines experimentally expressing EVI1 and/or MS4A3 were generated by retroviral transduction, and tested for their tumorigenicity by subcutaneous injection into severe combined immunodeficient mice.
+Gene expression microarray analysis identified 27 unique genes that were up-regulated, and 29 unique genes that were down-regulated, in response to EVI1 induction in the human myeloid cell line U937T. The most strongly repressed gene was MS4A3, and its down-regulation by EVI1 was confirmed by qRT-PCR in additional, independent experimental model systems. MS4A3 mRNA levels were also negatively correlated with those of EVI1 in several published AML data sets. Reporter gene assays and chromatin immunoprecipitation showed that EVI1 regulated MS4A3 via direct binding to a promoter proximal region. Experimental re-expression of MS4A3 in an EVI1 overexpressing cell line counteracted the tumor promoting effect of EVI1 in a murine xenograft model by increasing the rate of apoptosis.",Does eVI1 promote tumor growth via transcriptional repression of MS4A3?,"Yes. Our data reveal MS4A3 as a novel direct target of EVI1 in human myeloid cells, and show that its repression plays a role in EVI1 mediated tumor aggressiveness.",PASS,pubmedQA,1
+21,12855939,"longitudinal descriptive study.
+2 large nursing homes in Turin, Italy.
+418 dependent elderly (83 males, 335 females, mean age 83.7+/-8.5 y, range 55-102) living in the nursing homes.
+the prevalence of peripheral arterial disease (PAD) was evaluated using a Doppler Ultrasound measurement of AAI (Ankle/Arm blood pressure Index). Death causes according to ICD-9-CM were ascertained on patient's clinical records.
+Diagnosis of PAD was made in 122 subjects (29.2%) with AAI<0.90. After a 3 year follow-up 203 patients (48.6%) died. The presence of PAD was not related to total mortality or to mortality for ischemic heart disease (IHD), cerebrovascular disease or other causes. IHD mortality was significantly and independently related to low haemoglobin values, previous cerebrovascular disease, polypharmacy and poor mobility conditions.",Is ankle/arm pressure predictive for cardiovascular mortality in older patients living in nursing homes?,"No. The prevalence of PAD is high in nursing home residents. AAI is not predictive for IHD mortality in this population. In very frail elderly traditional risk factors and PAD are less important predictors of death compared to poor functional status, nutritional factors and previous cardiovascular disease.",PASS,pubmedQA,1
+22,27249091,"To examine the potential differential impact of childhood trauma, according to the age at the time of exposure, on the psychopathological profile of patients with early psychosis treated in a specialized 3-year program during the early phase of the disease.
+196 subjects with early psychosis aged 18-35 years were followed up prospectively over 36 months of treatment between 2004 and 2010. Patients who had faced at least 1 experience of abuse (physical, sexual, or emotional) or neglect (physical or emotional) were classified according to age at the time of the first exposure (early trauma: before 12 years of age; late trauma: from age 12 through 16 years) and then compared with unexposed patients (nontrauma). The level of symptoms was assessed using the Positive and Negative Syndrome Scale, the Young Mania Rating Scale, and the Montgomery-Asberg Depression Rating Scale.
+Exposure to 1 or more forms of trauma before 16 years of age was present in 31.63% of patients. Comparisons over the 3 years of treatment with the nontrauma patients revealed that (1) patients with early trauma showed consistently higher levels of positive (P = .006), depressive (P = .001), manic (P = .006), and negative (P = .029) symptoms and (2) patients with late trauma showed only more negative symptoms (P = .029).",Does age at the time of exposure to trauma modulate the psychopathological profile in patients with early psychosis?,"Yes. These results suggest that the age at the time of exposure to trauma has a modulating effect on symptoms in patients with early psychosis. Various biological and psychological hypotheses can be proposed to explain this observation, and they need to be investigated in an experimental setting in order to develop therapeutic avenues.",PASS,pubmedQA,0
+23,19357361,"Identifying the cues required for the survival and development of photoreceptors is essential for treating retinal neurodegeneration. The authors previously established that glial-derived neurotrophic factor (GDNF) stimulates proliferation and that docosahexaenoic acid (DHA) promotes photoreceptor survival and differentiation. Later findings that ceramide triggers photoreceptor apoptosis suggested sphingolipids might also control photoreceptor development. The present study investigated whether sphingosine-1-phophate (S1P), which promotes survival and differentiation in several cell types, regulates photoreceptor proliferation and differentiation and whether it is a mediator in GDNF and DHA effects.
+Rat retina neuronal cultures were supplemented at day 0 or 1 with S1P, GDNF, or DHA and were treated with DL-threo-dihydrosphingosine to inhibit S1P synthesis or with brefeldin A (BFA) to block intracellular trafficking. Proliferation was quantified to determine bromodeoxyuridine uptake and number of mitotic figures. Opsin, peripherin, and sphingosine kinase (SphK), the enzyme required for S1P synthesis, were quantified by immunocytochemistry and Western blot analysis.
+S1P increased the proliferation of photoreceptor progenitors. It also stimulated the formation of apical processes, enhanced opsin and peripherin expression, and promoted their localization in these processes; DHA had similar effects. BFA prevented S1P and DHA enhancement of apical process formation without affecting opsin expression. GDNF and DHA enhanced SphK expression in photoreceptors, while inhibiting S1P synthesis blocked GDNF mitogenic effects and DHA effects on differentiation.",Is sphingosine-1-phosphate a key regulator of proliferation and differentiation in retina photoreceptors?,"Yes. The authors propose S1P as a key regulator in photoreceptor development. GDNF and DHA might upregulate SphK levels to promote S1P synthesis, which would initially promote proliferation and then advance photoreceptor differentiation.",PASS,pubmedQA,1
+24,11683916,"DNA replication-related element binding factor (DREF) has been suggested to be involved in regulation of DNA replication- and proliferation-related genes in Drosophila. While the effects on the mutation in the DNA replication-related element (DRE) in cultured cells have been studied extensively, the consequences of elevating wild-type DREF activity in developing tissues have hitherto remained unclear.
+We over-expressed DREF in the wing imaginal disc using a GAL4-UAS targeted expression system in Drosophila. Over-expression of DREF induced a notching wing phenotype, which was associated with ectopic apoptosis. A half reduction of the reaper, head involution defective and grim gene dose suppressed this DREF-induced notching wing phenotype. Furthermore, this was also the case with co-expression of baculovirus P35, a caspase inhibitor. In addition, over-expression of the 32 kDa boundary element-associated factor (BEAF-32), thought to compete against DREF for common binding sites in genomic regions, rescued the DREF-induced notching wing phenotype, while a half reduction of the genomic region, including the BEAF-32 gene, exerted enhancing effects. To our knowledge, this is the first evidence for a genetic interaction between DREF and BEAF-32.",Does over-expression of DREF in the Drosophila wing imaginal disc induce apoptosis and a notching wing phenotype?,Yes. The DREF-induced notching wing phenotype is caused by induction of apoptosis in the Drosophila wing imaginal disc.,PASS,pubmedQA,1
+25,20521332,"Among people with arthritis, the need for work transitions may signal a risk for more adverse work outcomes in the future, such as permanent work loss. Our aim was to evaluate the ability of the Work Instability Scale for Rheumatoid Arthritis (RA-WIS) to predict arthritis-related work transitions within a 12-month period.
+Workers with osteoarthritis or rheumatoid arthritis (n = 250) from 3 clinical sites participated in self-administered surveys that assessed the impact of health on employment at multiple time points over 12 months. Multivariable logistic regressions were conducted to assess the ability of the RA-WIS (range 0-23, where 23 = highest work instability) to predict 4 types of work transition: reductions in work hours, disability leaves of absence, changes in job/occupation, or temporary unemployment, assembled as a composite outcome. Covariates assessed include age, sex, education, marital status, income, pain intensity, disease duration, and the Health Assessment Questionnaire. Areas under the receiver operating characteristic curves (AUROCCs) were also assessed to further examine the predictive ability of the RA-WIS and to determine optimal cut points for predicting specific work transitions.
+After 12 months, 21.7% (n = 50 of 230) of the participants had indicated at least one arthritis-related work transition. Higher baseline RA-WIS was predictive of such an outcome (relative risk [RR] 1.05 [95% confidence interval (95% CI) 1.00-1.11]), particularly at >17 (RR 2.30 [95% CI 1.11-4.77]). The RA-WIS cut point of >13 was found to be most accurate for prediction (AUROCC 0.68 [95% CI 0.58-0.78]).",Does the Work Instability Scale for rheumatoid arthritis predict arthritis-related work transitions within 12 months?,"No. The RA-WIS did not demonstrate the ability to predict arthritis-related work transitions within a short timeframe, and is not a promising measurement candidate for risk prognostication where work disability outcomes are of concern.",FAIL,pubmedQA,0
+26,9602458,"This paper assesses the usefulness of the Child Health Computing System as a source of information about children with cerebral palsy.
+A comparative survey of information held on the Child Health Computing System (CHCS) and the Northern Ireland Cerebral Palsy Register (NICPR) in one Health and Social Services Board in Northern Ireland was carried out. The sample comprised children with cerebral palsy aged 5-9 years.
+Of the 135 cases recorded on the NICPR, 47 per cent were not found on the CHCS; the majority of these children had no computer record of any medical diagnosis. Of the 82 cases recorded on the CHCS, 10 (12 per cent) were not found on the NICPR; five of these cases (6 per cent) were found on follow-up not to have CP.",Does the Child Health Computing System adequately identify children with cerebral palsy?,"Yes. The Child Health Computing System (CHCS) effectively identifies children with cerebral palsy, providing reliable data for needs assessment and surveillance comparable to that of specialist case registers.",FAIL,pubmedQA,0
+27,24366371,"High fructose corn syrup (HFCS) is the most commonly used sweetener in the United States. Some studies show that HFCS consumption correlates with obesity and insulin resistance, while other studies are in disagreement. Owing to conflicting and insufficient scientific evidence, the safety of HFCS consumption remains controversial.
+We investigated the metabolic consequences of mice fed a (a) regular diet, (b) 'Western' high-fat diet or (c) regular diet supplemented with 8% HFCS in drinking water (to mimic soft drinks) for 10 months. Adipose tissue macrophages (ATMs) have emerged as a major pathogenic factor for obesity and insulin resistance. ATMs consist of proinflammatory F4/80(+)CD11c(+) macrophages and anti-inflammatory F4/80(+)CD11c(-) macrophages. In this study, we assessed the effects of HFCS on ATMs in intra-abdominal fat.
+We found that HFCS feeding in mice induced more severe adipose inflammation and insulin resistance than even the higher-calorie-containing 'Western' high-fat diet, and these HFCS-induced deleterious effects were independent of calorie intake or body fat content. We showed that similar to 'Western' high-fat diet, HFCS triggered a robust increase of both proinflammatory ATMs and anti-inflammatory ATMs in intra-abdominal fat. Remarkably, however, the anti-inflammatory ATMs were much less abundant in HFCS-fed mice than in high-fat-fed mice. Furthermore, we showed that deletion of the ghrelin receptor (growth hormone secretagogue receptor, GHS-R) ameliorates HFCS-induced adipose inflammation and insulin resistance. HFCS-fed GHS-R-null mice exhibit decreased proinflammatory ATMs in intra-abdominal fat, reduced adipose inflammation and attenuated liver steatosis.",Does ghrelin receptor regulate HFCS-induced adipose inflammation and insulin resistance?,"No. Our studies demonstrate that HFCS has detrimental effects on metabolism, suggesting that dietary guidelines on HFCS consumption for Americans may need to be revisited. GHS-R deletion does not mitigate the effects of HFCS on adipose inflammation and insulin resistance, suggesting that GHS-R antagonists may not represent a novel therapy for insulin resistance.",FAIL,pubmedQA,0
+28,20967283,"The liver plays a central role in nutrient and xenobiotic metabolism, but its functionality declines with age. Senior dogs suffer from many of the chronic hepatic diseases as elderly humans, with age-related alterations in liver function influenced by diet. However, a large-scale molecular analysis of the liver tissue as affected by age and diet has not been reported in dogs.
+Liver tissue samples were collected from six senior (12-year old) and six young adult (1-year old) female beagles fed an animal protein-based diet (APB) or a plant protein-based diet (PPB) for 12 months. Total RNA in the liver tissue was extracted and hybridized to Affymetrix GeneChip® Canine Genome Arrays. Using a 2.0-fold cutoff and false discovery rate <0.10, our results indicated that expression of 234 genes was altered by age, while 137 genes were differentially expressed by diet. Based on functional classification, genes affected by age and/or diet were involved in cellular development, nutrient metabolism, and signal transduction. In general, gene expression suggested that senior dogs had an increased risk of the progression of liver disease and dysfunction, as observed in aged humans and rodents. In particular for aged liver, genes related to inflammation, oxidative stress, and glycolysis were up-regulated, whereas genes related to regeneration, xenobiotic metabolism, and cholesterol trafficking were down-regulated. Diet-associated changes in gene expression were more common in young adult dogs (33 genes) as compared to senior dogs (3 genes).",Do age and diet affect gene expression profiles in canine liver tissue?,"Yes. Our results provide molecular insight pertaining to the aged canine liver and its predisposition to disease and abnormalities. Therefore, our data may aid in future research pertaining to age-associated alterations in hepatic function or identification of potential targets for nutritional management as a means to decrease incidence of age-dependent liver dysfunction. Interestingly, diet-associated changes in gene expression were more common in senior dogs compared to young adult dogs.",FAIL,pubmedQA,0
+29,25623806,"Our goal was to identify brain structures responsible for pain-related autonomic changes by the correlation of simultaneously acquired functional magnetic resonance imaging (fMRI) and electrocardiogram (ECG) data.
+Eighteen healthy men (age: 22.89 ± 1.96) were involved. Painful sensation was evoked by heat. Simultaneously recorded brain fMRI and ECG data during pain were compared to data acquired during a non-painful heat sensation. From the ECG data, time- and frequency domain parameters of heart rate variability (HRV) were extracted.
+We found that: (1) among the common elements of both pain network and central autonomic network (CAN) only the medial prefrontal frontal cortex (MPFC) showed significant correlation with HRV; (2) the parasympathetic response to the painful stimuli showed a positive, while the sympathetic response a negative association with pain related BOLD-signal change observed in MPFC; (3) time domain parameters of HRV were negatively associated with MPFC activation.",Is pain-related autonomic response modulated by the medial prefrontal cortex : An ECG-fMRI study in men?,"No. The novelty of our study-compared to previous ECG-fMRI studies-is that we used pain as stimulus and investigated both frequency- and time-domain parameters of HRV. Compared to other stimuli used in earlier studies to activate the CAN, pain sensation can be standardized easier and might allow us to better understand the functional organization of CAN. The results of the current ECG-fMRI study may have direct clinical relevance in understanding the pathomechanisms of several clinical conditions.",FAIL,pubmedQA,0
+30,financebench_id_06379,"Table of Contents
+Lockheed Martin Corporation
+Consolidated Statements of Earnings
+(in millions, except per share data)
+ 
+ 
+ 
+Years Ended December 31,
+ 
+ 
+2019
+ 
+2018
+ 
+2017
+Net sales
+ 
+ 
+ 
+Products
+ $
+50,053
+ $
+45,005
+ $
+42,502
+Services
+ 
+9,759
+ 
+8,757
+ 
+7,458
+Total net sales
+ 
+59,812
+ 
+53,762
+ 
+49,960
+Cost of sales
+ 
+ 
+ 
+Products
+ 
+(44,589) 
+(40,293) 
+(38,417)
+Services
+ 
+(8,731) 
+(7,738) 
+(6,673)
+Severance and restructuring charges
+ 
+
+ 
+(96) 
+
+Other unallocated, net
+ 
+1,875
+ 
+1,639
+ 
+1,501
+Total cost of sales
+ 
+(51,445) 
+(46,488) 
+(43,589)
+Gross profit
+ 
+8,367
+ 
+7,274
+ 
+6,371
+Other income, net
+ 
+178
+ 
+60
+ 
+373
+Operating profit
+ 
+8,545
+ 
+7,334
+ 
+6,744
+Interest expense
+ 
+(653) 
+(668) 
+(651)
+Other non-operating expense, net
+ 
+(651) 
+(828) 
+(847)
+Earnings from continuing operations before income taxes
+ 
+7,241
+ 
+5,838
+ 
+5,246
+Income tax expense
+ 
+(1,011) 
+(792) 
+(3,356)
+Net earnings from continuing operations
+ 
+6,230
+ 
+5,046
+ 
+1,890
+Net earnings from discontinued operations
+ 
+
+ 
+
+ 
+73
+Net earnings
+ $
+6,230
+ $
+5,046
+ $
+1,963
+Earnings per common share
+ 
+ 
+ 
+Basic
+ 
+ 
+ 
+Continuing operations
+ $
+22.09
+ $
+17.74
+ $
+6.56
+Discontinued operations
+ 
+
+ 
+
+ 
+0.26
+Basic earnings per common share
+ $
+22.09
+ $
+17.74
+ $
+6.82
+Diluted
+ 
+ 
+ 
+Continuing operations
+ $
+21.95
+ $
+17.59
+ $
+6.50
+Discontinued operations
+ 
+
+ 
+
+ 
+0.25
+Diluted earnings per common share
+ $
+21.95
+ $
+17.59
+ $
+6.75
+The accompanying notes are an integral part of these consolidated financial statements.
+59
+Table of Contents
+Lockheed Martin Corporation
+Consolidated Balance Sheets
+(in millions, except par value)
+ 
+ 
+ 
+December 31,
+ 
+ 
+2019
+ 
+2018
+Assets
+ 
+ 
+Current assets
+ 
+ 
+Cash and cash equivalents
+ $
+1,514
+ $
+772
+Receivables, net
+ 
+2,337
+ 
+2,444
+Contract assets
+ 
+9,094
+ 
+9,472
+Inventories
+ 
+3,619
+ 
+2,997
+Other current assets
+ 
+531
+ 
+418
+Total current assets
+ 
+17,095
+ 
+16,103
+Property, plant and equipment, net
+ 
+6,591
+ 
+6,124
+Goodwill
+ 
+10,604
+ 
+10,769
+Intangible assets, net
+ 
+3,213
+ 
+3,494
+Deferred income taxes
+ 
+3,319
+ 
+3,208
+Other noncurrent assets
+ 
+6,706
+ 
+5,178
+Total assets
+ $
+47,528
+ $
+44,876
+Liabilities and equity
+ 
+ 
+Current liabilities
+ 
+ 
+Accounts payable
+ $
+1,281
+ $
+2,402
+Contract liabilities
+ 
+7,054
+ 
+6,491
+Salaries, benefits and payroll taxes
+ 
+2,466
+ 
+2,122
+Current maturities of long-term debt and commercial paper
+ 
+1,250
+ 
+1,500
+Other current liabilities
+ 
+1,921
+ 
+1,883
+Total current liabilities
+ 
+13,972
+ 
+14,398
+Long-term debt, net
+ 
+11,404
+ 
+12,604
+Accrued pension liabilities
+ 
+13,234
+ 
+11,410
+Other postretirement benefit liabilities
+ 
+337
+ 
+704
+Other noncurrent liabilities
+ 
+5,410
+ 
+4,311
+Total liabilities
+ 
+44,357
+ 
+43,427
+Stockholders equity
+ 
+ 
+Common stock, $1 par value per share
+ 
+280
+ 
+281
+Additional paid-in capital
+ 
+
+ 
+
+Retained earnings
+ 
+18,401
+ 
+15,434
+Accumulated other comprehensive loss
+ 
+(15,554) 
+(14,321)
+Total stockholders equity
+ 
+3,127
+ 
+1,394
+Noncontrolling interests in subsidiary
+ 
+44
+ 
+55
+Total equity
+ 
+3,171
+ 
+1,449
+Total liabilities and equity
+ $
+47,528
+ $
+44,876
+The accompanying notes are an integral part of these consolidated financial statements.
+61
+",What is FY2019 days sales outstanding (DSO) for Lockheed Martin? DSO is defined as: 365 * (average accounts receivable between FY2018 and FY2019) / (FY2019 Revenue). Round your answer to two decimal places. Base your judgments on the information provided primarily in the P&L statement and the balance sheet.,14.59,PASS,FinanceBench,1
+31,financebench_id_00527,"Securities registered pursuant to Section 12(b) of the Act:
+Title of each class
+Trading Symbol(s)
+Name of each exchange on which registered
+Common Stock, $0.01 par value
+MCD
+New York Stock Exchange
+",Which debt securities are registered to trade on a national securities exchange under McDonald's name as of FY2022?,There are none,PASS,FinanceBench,0
+32,financebench_id_01676,"We have deep capabilities in materials science, optical design, shaping, coating, finishing, metrology and optical system assembly. Our products and capabilities in this
+segment position us to meet the needs of a broad array of markets, including semiconductor, aerospace, defense, industrial, commercial and telecommunications. Our
+principal competitors include Schott AG, AGC Inc., Nippon Electric Glass Co., Ltd. and Heraeus.
+",What is Corning's competition landscape and positioning in the Specialty Materials Segment?,"Corning maintains a competitive position in this segment; although, the landscape has a lot of strong competitors who dominate the segment.",PASS,FinanceBench,0
+33,financebench_id_07512,"Table of Contents
+American Water Works Company, Inc. and Subsidiary Companies 
+Consolidated Balance Sheets
+(In millions, except share and per share data)
+ 
+December 31, 2018
+ 
+December 31, 2017
+ASSETS
+Property, plant and equipment
+$
+23,204 
+$
+21,716
+Accumulated depreciation
+(5,795) 
+(5,470)
+Property, plant and equipment, net
+17,409 
+16,246
+Current assets:
+ 
+ 
+ 
+Cash and cash equivalents
+130 
+55
+Restricted funds
+28 
+27
+Accounts receivable, net
+301 
+272
+Unbilled revenues
+186 
+212
+Materials and supplies
+41 
+41
+Other
+95 
+113
+Total current assets
+781 
+720
+Regulatory and other long-term assets:
+ 
+ 
+ 
+Regulatory assets
+1,156 
+1,061
+Goodwill
+1,575 
+1,379
+Intangible assets
+84 
+9
+Postretirement benefit asset
+155 
+
+Other
+63 
+67
+Total regulatory and other long-term assets
+3,033 
+2,516
+Total assets
+$
+21,223 
+$
+19,482
+ The accompanying notes are an integral part of these Consolidated Financial Statements.
+81
+Table of Contents
+American Water Works Company, Inc. and Subsidiary Companies
+Consolidated Statements of Operations
+(In millions, except per share data)
+ 
+For the Years Ended December 31,
+ 
+2018
+ 
+2017
+ 
+2016
+Operating revenues
+$
+3,440 
+$
+3,357 
+$
+3,302
+Operating expenses:
+ 
+ 
+ 
+ 
+ 
+Operation and maintenance
+1,479 
+1,369 
+1,499
+Depreciation and amortization
+545 
+492 
+470
+General taxes
+277 
+259 
+258
+(Gain) on asset dispositions and purchases
+(20) 
+(16) 
+(10)
+Impairment charge
+57 
+ 
+
+Total operating expenses, net
+2,338 
+2,104 
+2,217
+Operating income
+1,102 
+1,253 
+1,085
+Other income (expense):
+ 
+ 
+ 
+ 
+ 
+Interest, net
+(350) 
+(342) 
+(325)
+Non-operating benefit costs, net
+20 
+(9) 
+(5)
+Loss on early extinguishment of debt
+(4) 
+(7) 
+
+Other, net
+19 
+17 
+15
+Total other income (expense)
+(315) 
+(341) 
+(315)
+Income before income taxes
+787 
+912 
+770
+Provision for income taxes
+222 
+486 
+302
+Consolidated net income
+565 
+426 
+468
+Net loss attributable to noncontrolling interest
+(2) 
+ 
+
+Net income attributable to common shareholders
+$
+567 
+$
+426 
+$
+468
+ 
+ 
+ 
+ 
+ 
+ 
+Basic earnings per share: (a)
+
+ 
+
+ 
+
+Net income attributable to common shareholders
+$
+3.16 
+$
+2.39 
+$
+2.63
+Diluted earnings per share: (a)
+
+ 
+
+ 
+
+Net income attributable to common shareholders
+$
+3.15 
+$
+2.38 
+$
+2.62
+Weighted average common shares outstanding:
+ 
+ 
+ 
+ 
+ 
+Basic
+180 
+178 
+178
+Diluted
+180 
+179 
+179
+(a)
+Amounts may not calculate due to rounding.
+The accompanying notes are an integral part of these Consolidated Financial Statements.
+83
+","We need to calculate a reasonable approximation (or exact number if possible) of a financial metric. Basing your judgment by information plainly provided in the balance sheet and the statement of income, what is the FY2018 asset turnover ratio for American Water Works? Asset turnover ratio is defined as: FY2018 revenue / (average total assets between FY2017 and FY2018). Round your answer to two decimal places.",0.17,PASS,FinanceBench,0
+34,financebench_id_07765,"THE COCA-COLA COMPANY AND SUBSIDIARIES
+CONSOLIDATED BALANCE SHEETS
+(In millions except par value)
+December 31,
+2020
+2019
+ASSETS
+Current Assets
+ 
+ 
+Cash and cash equivalents
+$
+6,795 $
+6,480 
+Short-term investments
+1,771 
+1,467 
+Total Cash, Cash Equivalents and Short-Term Investments
+8,566 
+7,947 
+Marketable securities
+2,348 
+3,228 
+Trade accounts receivable, less allowances of $526 and $524, respectively
+3,144 
+3,971 
+Inventories
+3,266 
+3,379 
+Prepaid expenses and other assets
+1,916 
+1,886 
+Total Current Assets
+19,240 
+20,411 
+Equity method investments
+19,273 
+19,025 
+Other investments
+812 
+854 
+Other assets
+6,184 
+6,075 
+Deferred income tax assets
+2,460 
+2,412 
+Property, plant and equipment net
+10,777 
+10,838 
+Trademarks with indefinite lives
+10,395 
+9,266 
+Goodwill
+17,506 
+16,764 
+Other intangible assets
+649 
+736 
+Total Assets
+$
+87,296 $
+86,381 
+LIABILITIES AND EQUITY
+Current Liabilities
+ 
+ 
+Accounts payable and accrued expenses
+$
+11,145 $
+11,312 
+Loans and notes payable
+2,183 
+10,994 
+Current maturities of long-term debt
+485 
+4,253 
+Accrued income taxes
+788 
+414 
+Total Current Liabilities
+14,601 
+26,973 
+Long-term debt
+40,125 
+27,516 
+Other liabilities
+9,453 
+8,510 
+Deferred income tax liabilities
+1,833 
+2,284 
+The Coca-Cola Company Shareowners' Equity
+ 
+ 
+Common stock, $0.25 par value; authorized 11,200 shares; issued 7,040 shares
+1,760 
+1,760 
+Capital surplus
+17,601 
+17,154 
+Reinvested earnings
+66,555 
+65,855 
+Accumulated other comprehensive income (loss)
+(14,601)
+(13,544)
+Treasury stock, at cost 2,738 and 2,760 shares, respectively
+(52,016)
+(52,244)
+Equity Attributable to Shareowners of The Coca-Cola Company
+19,299 
+18,981 
+Equity attributable to noncontrolling interests
+1,985 
+2,117 
+Total Equity
+21,284 
+21,098 
+Total Liabilities and Equity
+$
+87,296 $
+86,381 
+Refer to Notes to Consolidated Financial Statements.
+66
+","In agreement with the information outlined in the balance sheet, how much in net accounts receivable did Coca Cola have at the end of FY2020? Answer in USD thousands.",$3144000.00,PASS,FinanceBench,1
+35,financebench_id_08759,"Table of Contents
+Consolidated Statement of Income
+PepsiCo, Inc. and Subsidiaries
+Fiscal years ended December 31, 2016, December 26, 2015 and December 27, 2014
+(in millions except per share amounts)
+ 
+ 
+2016
+ 
+2015
+ 
+2014
+Net Revenue
+$
+62,799
+ $
+63,056
+ $
+66,683
+Cost of sales
+28,209
+ 
+28,731
+ 
+31,238
+Gross profit
+34,590
+ 
+34,325
+ 
+35,445
+Selling, general and administrative expenses
+24,735
+ 
+24,538
+ 
+25,772
+Venezuela impairment charges
+
+ 
+1,359
+ 
+
+Amortization of intangible assets
+70
+ 
+75
+ 
+92
+Operating Profit
+9,785
+ 
+8,353
+ 
+9,581
+Interest expense
+(1,342) 
+(970) 
+(909)
+Interest income and other
+110
+ 
+59
+ 
+85
+Income before income taxes
+8,553
+ 
+7,442
+ 
+8,757
+Provision for income taxes
+2,174
+ 
+1,941
+ 
+2,199
+Net income
+6,379
+ 
+5,501
+ 
+6,558
+Less: Net income attributable to noncontrolling interests
+50
+ 
+49
+ 
+45
+Net Income Attributable to PepsiCo
+$
+6,329
+ $
+5,452
+ $
+6,513
+Net Income Attributable to PepsiCo per Common Share
+ 
+ 
+ 
+Basic
+$
+4.39
+ $
+3.71
+ $
+4.31
+Diluted
+$
+4.36
+ $
+3.67
+ $
+4.27
+Weighted-average common shares outstanding
+ 
+ 
+ 
+Basic
+1,439
+ 
+1,469
+ 
+1,509
+Diluted
+1,452
+ 
+1,485
+ 
+1,527
+Cash dividends declared per common share
+$
+2.96
+ $
+2.7625
+ $
+2.5325
+See accompanying notes to the consolidated financial statements.
+76
+Table of Contents
+Consolidated Statement of Cash Flows
+PepsiCo, Inc. and Subsidiaries
+Fiscal years ended December 31, 2016, December 26, 2015 and December 27, 2014
+(in millions)
+ 
+2016
+ 
+2015
+ 
+2014
+Operating Activities
+ 
+ 
+ 
+ 
+Net income
+$
+6,379
+ 
+$
+5,501
+ $
+6,558
+Depreciation and amortization
+2,368
+ 
+2,416
+ 
+2,625
+Share-based compensation expense
+284
+ 
+295
+ 
+297
+Restructuring and impairment charges
+160
+ 
+230
+ 
+418
+Cash payments for restructuring charges
+(125) 
+(208) 
+(266)
+Charges related to the transaction with Tingyi
+373
+
+73
+ 
+
+Venezuela impairment charges
+
+ 
+1,359
+ 
+
+Venezuela remeasurement charge
+
+ 
+
+ 
+105
+Excess tax benefits from share-based payment arrangements
+(139) 
+(133) 
+(114)
+Pension and retiree medical plan expenses
+501
+ 
+467
+ 
+667
+Pension and retiree medical plan contributions
+(695) 
+(205) 
+(655)
+Deferred income taxes and other tax charges and credits
+452
+ 
+78
+ 
+(19)
+Change in assets and liabilities:
+ 
+ 
+ 
+ 
+Accounts and notes receivable
+(349) 
+(461) 
+(343)
+Inventories
+(75) 
+(244) 
+(111)
+Prepaid expenses and other current assets
+10
+ 
+(50) 
+80
+Accounts payable and other current liabilities
+997
+ 
+1,692
+ 
+1,162
+Income taxes payable
+329
+ 
+55
+ 
+371
+Other, net
+(66) 
+(285) 
+(269)
+Net Cash Provided by Operating Activities
+10,404
+ 
+10,580
+ 
+10,506
+ 
+ 
+ 
+ 
+ 
+Investing Activities
+ 
+ 
+ 
+ 
+Capital spending
+(3,040) 
+(2,758) 
+(2,859)
+Sales of property, plant and equipment
+99
+ 
+86
+ 
+115
+Acquisitions and investments in noncontrolled affiliates
+(212) 
+(86) 
+(88)
+Reduction of cash due to Venezuela deconsolidation
+
+ 
+(568) 
+
+Divestitures
+85
+ 
+76
+ 
+203
+Short-term investments, by original maturity:
+ 
+ 
+ 
+ 
+More than three months - purchases
+(12,504) 
+(4,428) 
+(6,305)
+More than three months - maturities
+8,399
+ 
+4,111
+ 
+3,891
+Three months or less, net
+16
+ 
+3
+ 
+116
+Other investing, net
+9
+ 
+(5) 
+(10)
+Net Cash Used for Investing Activities
+(7,148) 
+(3,569) 
+(4,937)
+ 
+ 
+ 
+ 
+ 
+Financing Activities
+ 
+ 
+ 
+ 
+Proceeds from issuances of long-term debt
+7,818
+ 
+8,702
+ 
+3,855
+Payments of long-term debt
+(3,105) 
+(4,095) 
+(2,189)
+Debt redemptions
+(2,504) 
+
+ 
+
+Short-term borrowings, by original maturity:
+ 
+ 
+ 
+ 
+More than three months - proceeds
+59
+ 
+15
+ 
+50
+More than three months - payments
+(27) 
+(43) 
+(10)
+Three months or less, net
+1,505
+ 
+53
+ 
+(2,037)
+Cash dividends paid
+(4,227) 
+(4,040) 
+(3,730)
+Share repurchases - common
+(3,000) 
+(5,000) 
+(5,012)
+Share repurchases - preferred
+(7) 
+(5) 
+(10)
+Proceeds from exercises of stock options
+465
+ 
+504
+ 
+755
+Excess tax benefits from share-based payment arrangements
+139
+ 
+133
+ 
+114
+Other financing
+(58) 
+(52) 
+(50)
+Net Cash Used for Financing Activities
+(2,942) 
+(3,828) 
+(8,264)
+Effect of exchange rate changes on cash and cash equivalents
+(252) 
+(221) 
+(546)
+Net Increase/(Decrease) in Cash and Cash Equivalents
+62
+ 
+2,962
+ 
+(3,241)
+Cash and Cash Equivalents, Beginning of Year
+9,096
+ 
+6,134
+ 
+9,375
+Cash and Cash Equivalents, End of Year
+$
+9,158
+ 
+$
+9,096
+ $
+6,134
+See accompanying notes to the consolidated financial statements.
+78
+","By relying on the line items plainly stated within the statement of income and the statement of cash flows, what is PepsiCo's FY2016 total D&A (as shown in cash flow statement) as a percent of total revenue?",3.9%,FAIL,FinanceBench,1
+36,financebench_id_06972,"Table of Contents
+The Boeing Company and Subsidiaries
+Consolidated Statements of Financial Position 
+(Dollars in millions, except per share data)
+
+ 
+December 31,
+2016
+
+2015
+Assets
+
+ 
+Cash and cash equivalents
+$8,801
+
+$11,302
+Short-term and other investments
+1,228
+
+750
+Accounts receivable, net
+8,832
+
+8,713
+Current portion of customer financing, net
+428
+
+212
+Inventories, net of advances and progress billings
+43,199
+
+47,257
+Total current assets
+62,488
+
+68,234
+Customer financing, net
+3,773
+
+3,358
+Property, plant and equipment, net
+12,807
+
+12,076
+Goodwill
+5,324
+
+5,126
+Acquired intangible assets, net
+2,540
+
+2,657
+Deferred income taxes
+332
+
+265
+Investments
+1,317
+
+1,284
+Other assets, net of accumulated amortization of $497 and $451
+1,416
+
+1,408
+Total assets
+$89,997
+
+$94,408
+Liabilities and equity
+
+ 
+Accounts payable
+$11,190
+
+$10,800
+Accrued liabilities
+14,691
+
+14,014
+Advances and billings in excess of related costs
+23,869
+
+24,364
+Short-term debt and current portion of long-term debt
+384
+
+1,234
+Total current liabilities
+50,134
+
+50,412
+Deferred income taxes
+1,338
+
+2,392
+Accrued retiree health care
+5,916
+
+6,616
+Accrued pension plan liability, net
+19,943
+
+17,783
+Other long-term liabilities
+2,221
+
+2,078
+Long-term debt
+9,568
+
+8,730
+Shareholders equity:
+
+ 
+Common stock, par value $5.00 1,200,000,000 shares authorized; 1,012,261,159 shares issued
+5,061
+
+5,061
+Additional paid-in capital
+4,762
+
+4,834
+Treasury stock, at cost
+(36,097) 
+(29,568)
+Retained earnings
+40,714
+
+38,756
+Accumulated other comprehensive loss
+(13,623) 
+(12,748)
+Total shareholders equity
+817
+
+6,335
+Noncontrolling interests
+60
+
+62
+Total equity
+877
+
+6,397
+Total liabilities and equity
+$89,997
+
+$94,408
+See Notes to the Consolidated Financial Statements on pages 55 106 .
+51
+","In agreement with the information outlined in the balance sheet, what is Boeing's FY2016 net working capital? Define net working capital as total current assets less total current liabilities. Answer in USD billions.",$12.50,FAIL,FinanceBench,1
+37,financebench_id_03245,"Table of Contents
+ACTIVISION BLIZZARD, INC. AND SUBSIDIARIES
+CONSOLIDATED STATEMENTS OF OPERATIONS
+(Amounts in millions, except per share data)
+ 
+For the Years Ended December 31,
+ 
+2021
+2020
+2019
+Net revenues
+ 
+ 
+ 
+Product sales
+$
+2,311 
+$
+2,350 
+$
+1,975 
+In-game, subscription, and other revenues
+6,492 
+5,736 
+4,514 
+Total net revenues
+8,803 
+8,086 
+6,489 
+Costs and expenses
+ 
+ 
+ 
+Cost of revenuesproduct sales:
+Product costs
+649 
+705 
+656 
+Software royalties, amortization, and intellectual property licenses
+346 
+269 
+240 
+Cost of revenuesin-game, subscription, and other:
+Game operations and distribution costs
+1,215 
+1,131 
+965 
+Software royalties, amortization, and intellectual property licenses
+107 
+155 
+233 
+Product development
+1,337 
+1,150 
+998 
+Sales and marketing
+1,025 
+1,064 
+926 
+General and administrative
+788 
+784 
+732 
+Restructuring and related costs
+77 
+94 
+132 
+Total costs and expenses
+5,544 
+5,352 
+4,882 
+Operating income
+3,259 
+2,734 
+1,607 
+Interest and other expense (income), net (Note 18)
+95 
+87 
+(26)
+Loss on extinguishment of debt
+ 
+31 
+ 
+Income before income tax expense
+3,164 
+2,616 
+1,633 
+Income tax expense
+465 
+419 
+130 
+Net income
+$
+2,699 
+$
+2,197 
+$
+1,503 
+Earnings per common share
+ 
+ 
+ 
+Basic
+$
+3.47 
+$
+2.85 
+$
+1.96 
+Diluted
+$
+3.44 
+$
+2.82 
+$
+1.95 
+Weighted-average number of shares outstanding
+ 
+ 
+ 
+Basic
+777 
+771 
+767 
+Diluted
+784 
+778 
+771 
+The accompanying notes are an integral part of these Consolidated Financial Statements.
+F-4
+","Using only the information within the statement of income, what is Activision Blizzard's three year average unadjusted operating income % margin from FY2019 to FY2021? Answer in units of percents and round to one decimal place.",32.1%,FAIL,FinanceBench,1
+38,financebench_id_03622,"THE COCA-COLA COMPANY AND SUBSIDIARIES
+CONSOLIDATED STATEMENTS OF INCOME
+(In millions except per share data)
+Year Ended December 31,
+2021
+2020
+2019
+Net Operating Revenues
+$
+38,655 $
+33,014 $
+37,266 
+Cost of goods sold
+15,357 
+13,433 
+14,619 
+Gross Profit
+23,298 
+19,581 
+22,647 
+Selling, general and administrative expenses
+12,144 
+9,731 
+12,103 
+Other operating charges
+846 
+853 
+458 
+Operating Income
+10,308 
+8,997 
+10,086 
+Interest income
+276 
+370 
+563 
+Interest expense
+1,597 
+1,437 
+946 
+Equity income (loss) net
+1,438 
+978 
+1,049 
+Other income (loss) net
+2,000 
+841 
+34 
+Income Before Income Taxes
+12,425 
+9,749 
+10,786 
+Income taxes
+2,621 
+1,981 
+1,801 
+Consolidated Net Income
+9,804 
+7,768 
+8,985 
+Less: Net income (loss) attributable to noncontrolling interests
+33 
+21 
+65 
+Net Income Attributable to Shareowners of The Coca-Cola Company
+$
+9,771 $
+7,747 $
+8,920 
+Basic Net Income Per Share
+$
+2.26 $
+1.80 $
+2.09 
+Diluted Net Income Per Share
+$
+2.25 $
+1.79 $
+2.07 
+Average Shares Outstanding Basic
+4,315 
+4,295 
+4,276 
+Effect of dilutive securities
+25 
+28 
+38 
+Average Shares Outstanding Diluted
+4,340 
+4,323 
+4,314 
+Calculated based on net income attributable to shareowners of The Coca-Cola Company.
+Refer to Notes to Consolidated Financial Statements.
+1
+1
+1 
+60
+THE COCA-COLA COMPANY AND SUBSIDIARIES
+CONSOLIDATED BALANCE SHEETS
+(In millions except par value)
+December 31,
+2021
+2020
+ASSETS
+Current Assets
+ 
+ 
+Cash and cash equivalents
+$
+9,684 $
+6,795 
+Short-term investments
+1,242 
+1,771 
+Total Cash, Cash Equivalents and Short-Term Investments
+10,926 
+8,566 
+Marketable securities
+1,699 
+2,348 
+Trade accounts receivable, less allowances of $516 and $526, respectively
+3,512 
+3,144 
+Inventories
+3,414 
+3,266 
+Prepaid expenses and other current assets
+2,994 
+1,916 
+Total Current Assets
+22,545 
+19,240 
+Equity method investments
+17,598 
+19,273 
+Other investments
+818 
+812 
+Other noncurrent assets
+6,731 
+6,184 
+Deferred income tax assets
+2,129 
+2,460 
+Property, plant and equipment net
+9,920 
+10,777 
+Trademarks with indefinite lives
+14,465 
+10,395 
+Goodwill
+19,363 
+17,506 
+Other intangible assets
+785 
+649 
+Total Assets
+$
+94,354 $
+87,296 
+LIABILITIES AND EQUITY
+Current Liabilities
+ 
+ 
+Accounts payable and accrued expenses
+$
+14,619 $
+11,145 
+Loans and notes payable
+3,307 
+2,183 
+Current maturities of long-term debt
+1,338 
+485 
+Accrued income taxes
+686 
+788 
+Total Current Liabilities
+19,950 
+14,601 
+Long-term debt
+38,116 
+40,125 
+Other noncurrent liabilities
+8,607 
+9,453 
+Deferred income tax liabilities
+2,821 
+1,833 
+The Coca-Cola Company Shareowners Equity
+ 
+ 
+Common stock, $0.25 par value; authorized 11,200 shares; issued 7,040 shares
+1,760 
+1,760 
+Capital surplus
+18,116 
+17,601 
+Reinvested earnings
+69,094 
+66,555 
+Accumulated other comprehensive income (loss)
+(14,330)
+(14,601)
+Treasury stock, at cost 2,715 and 2,738 shares, respectively
+(51,641)
+(52,016)
+Equity Attributable to Shareowners of The Coca-Cola Company
+22,999 
+19,299 
+Equity attributable to noncontrolling interests
+1,861 
+1,985 
+Total Equity
+24,860 
+21,284 
+Total Liabilities and Equity
+$
+94,354 $
+87,296 
+Refer to Notes to Consolidated Financial Statements.
+62
+","We need to calculate a reasonable approximation (or exact number if possible) of a financial metric. Basing your judgment by information plainly provided in the P&L statement and the statement of financial position, what is FY2021 days inventory outstanding (DIO) for Coca Cola? DIO is defined as: 365 * (average inventory between FY2020 and FY2021) / (FY2021 COGS). Round your answer to two decimal places.",82.45,FAIL,FinanceBench,1
+39,financebench_id_06462,"Table of Contents
+Lockheed Martin Corporation
+Consolidated Statements of Earnings
+(in millions, except per share data)
+ 
+ 
+ 
+Years Ended December 31,
+ 
+ 
+2019
+ 
+2018
+ 
+2017
+Net sales
+ 
+ 
+ 
+Products
+ $
+50,053
+ $
+45,005
+ $
+42,502
+Services
+ 
+9,759
+ 
+8,757
+ 
+7,458
+Total net sales
+ 
+59,812
+ 
+53,762
+ 
+49,960
+Cost of sales
+ 
+ 
+ 
+Products
+ 
+(44,589) 
+(40,293) 
+(38,417)
+Services
+ 
+(8,731) 
+(7,738) 
+(6,673)
+Severance and restructuring charges
+ 
+
+ 
+(96) 
+
+Other unallocated, net
+ 
+1,875
+ 
+1,639
+ 
+1,501
+Total cost of sales
+ 
+(51,445) 
+(46,488) 
+(43,589)
+Gross profit
+ 
+8,367
+ 
+7,274
+ 
+6,371
+Other income, net
+ 
+178
+ 
+60
+ 
+373
+Operating profit
+ 
+8,545
+ 
+7,334
+ 
+6,744
+Interest expense
+ 
+(653) 
+(668) 
+(651)
+Other non-operating expense, net
+ 
+(651) 
+(828) 
+(847)
+Earnings from continuing operations before income taxes
+ 
+7,241
+ 
+5,838
+ 
+5,246
+Income tax expense
+ 
+(1,011) 
+(792) 
+(3,356)
+Net earnings from continuing operations
+ 
+6,230
+ 
+5,046
+ 
+1,890
+Net earnings from discontinued operations
+ 
+
+ 
+
+ 
+73
+Net earnings
+ $
+6,230
+ $
+5,046
+ $
+1,963
+Earnings per common share
+ 
+ 
+ 
+Basic
+ 
+ 
+ 
+Continuing operations
+ $
+22.09
+ $
+17.74
+ $
+6.56
+Discontinued operations
+ 
+
+ 
+
+ 
+0.26
+Basic earnings per common share
+ $
+22.09
+ $
+17.74
+ $
+6.82
+Diluted
+ 
+ 
+ 
+Continuing operations
+ $
+21.95
+ $
+17.59
+ $
+6.50
+Discontinued operations
+ 
+
+ 
+
+ 
+0.25
+Diluted earnings per common share
+ $
+21.95
+ $
+17.59
+ $
+6.75
+The accompanying notes are an integral part of these consolidated financial statements.
+59
+",What is Lockheed Martin's total net revenues (in USD millions) for FY2019? Give a solution to the question by using the statement of income.,$59820.00,FAIL,FinanceBench,0
