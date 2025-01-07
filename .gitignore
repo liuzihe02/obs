@@ -4,3 +4,7 @@ venv/
 
 #checkpoints
 *checkpoints/
+
+#cache
+# Python cache files
+__pycache__/
