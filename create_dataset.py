@@ -99,10 +99,15 @@ def create_balanced_dataset(df, total_size, output_path):
     return final_df
 
 
-# %% 40 data points
-
 df = pd.read_csv("data/halubench/raw_halubench.csv")
 
+# %% 40 data points
+
 balanced_df = create_balanced_dataset(
-    df, total_size=40, output_path="data/custom_40samples_unlabeled.csv"
+    df, total_size=40, output_path="data/custom_40samples.csv"
+)
+
+# %% create 10 data points for few shot prompting
+balanced_df = create_balanced_dataset(
+    df, total_size=16, output_path="data/custom_16samples.csv"
 )

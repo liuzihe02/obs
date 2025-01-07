@@ -8,3 +8,6 @@ venv/
 #cache
 # Python cache files
 __pycache__/
+
+#experiment folders
+experiment/
