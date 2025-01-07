@@ -11,10 +11,14 @@ nest_asyncio
 httpx<0.28
 pandas
 python-dotenv
+
 openinference-instrumentation-langchain
 langchain
-langchain_openai
+langchain-openai
 langchain-community
+langchain-anthropic
+
+
 #this is galileo
 promptquality
 faiss-cpu

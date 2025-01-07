@@ -1,21 +1,16 @@
-# A Comparison of LLM Observability Tools
+# A Comparison of Hallucination Detection Tools and Research
 
-This project investigates various LLM observability platforms, focusing on issues of reliability and robustness. Specifically, we explore the broad functionalities of various providers, and benchmark their hallucination detection tools against each other and current research methods. We leave in depth investigation of robustness (defense against prompt injections, jailbreaking) to future work.
+We benchmark industry hallucination detection tools against each other and current research methods.
 
 ## Hallucination Detection Benchmarks
 
 We use the `HaluEval` annotated hallucinations to benchmark various hallucination detection tools on these samples, hence a black-box evaluation on prompts and answers only.
 
-We benchmark various industry tools with current hallucination research methods, including grey box and white box methods. Since we will need access to token level log probabilities and activations, we run the user queries in `HaluEval` to generate activations and log probs. We then use these to benchmark both industry and research methods.
-
 **Comparisons**
 - ARES
   - Few-shot w/GPT4, GPT4o
   - Zero-shot w/GPT4, GPT4o
-  - Answer Relevancy, Context Relevance, Answer Faithfulness
 - RAGAS
-  - Answer Relevancy, Context Relevance
-  - Answer Faithfulness doesnt work with single word answers
 - SelfCheckGPT
 - G-Eval
 - Lynx
@@ -31,10 +26,26 @@ We benchmark various industry tools with current hallucination research methods,
 - Within each kind of dataset, 50% `PASS` and 50% `FAIL`
   - `"PASS"==1`, `"FAIL"==0`
 
+### LLM-Judge
+
+We use both `openai` and `anthropic` models.
+
+**Zero-Shot**
+
+**Chain-of-Thought**
+
+**Few-Shot**
+
 ### ARES
 
 - We modify the `score_row` function in `ues_idp` to remove the extra calls for `context_relevance` `answer_relevance`. This because we only detect intrinsic hallucinations, which are based on `answer_faithfulness` only
 - We modify `ues_idp_config` to return the results for each datapoint
+
+> The checkpoint for answer faithfulness isn't provided
+
+### RAGAS
+
+> Answer faithfulness metric doesn't work well for single word answers, which comprise a huge portion of data
 
 ## Tips
 
