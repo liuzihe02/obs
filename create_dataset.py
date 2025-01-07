@@ -11,7 +11,7 @@ ds = load_dataset("PatronusAI/HaluBench")
 
 # # Define the features schema
 # features = Features(
-#     {
+#
 #         "id": Value("string"),
 #         "passage": Value("string"),
 #         "question": Value("string"),
@@ -103,11 +103,35 @@ df = pd.read_csv("data/halubench/raw_halubench.csv")
 
 # %% 40 data points
 
-balanced_df = create_balanced_dataset(
+full_df = create_balanced_dataset(
     df, total_size=40, output_path="data/custom_40samples.csv"
 )
 
 # %% create 10 data points for few shot prompting
-balanced_df = create_balanced_dataset(
+fewshot_df = create_balanced_dataset(
     df, total_size=16, output_path="data/custom_16samples.csv"
 )
+
+# %%
+# load back in the 2 datasets
+# make sure the full_df and fewshot_df dont have overlapping examples
+# Get sets of IDs from both dataframes
+# Load the saved datasets
+full_df = pd.read_csv("data/custom_40samples.csv")
+fewshot_df = pd.read_csv("data/custom_16samples.csv")
+
+full_df_ids = set(full_df["id"])
+fewshot_df_ids = set(fewshot_df["id"])
+
+# Find any overlapping IDs
+overlapping_ids = full_df_ids.intersection(fewshot_df_ids)
+
+# Check and print results
+if len(overlapping_ids) > 0:
+    print(f"WARNING: Found {len(overlapping_ids)} overlapping examples!")
+    print("Overlapping IDs:", overlapping_ids)
+    raise AssertionError("Datasets should not have overlapping examples")
+else:
+    print("Success: No overlapping examples found between the datasets")
+    print(f"Number of unique IDs in full dataset: {len(full_df_ids)}")
+    print(f"Number of unique IDs in few-shot dataset: {len(fewshot_df_ids)}")
