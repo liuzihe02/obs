@@ -28,7 +28,7 @@ We use the `HaluEval` annotated hallucinations to benchmark various hallucinatio
 
 ### LLM-Judge
 
-We use both `openai` and `anthropic` models.
+We use both `openai` and `anthropic` models. We use a similar prompt template to `arize` phoenix hallucination detection.
 
 **Zero-Shot**
 

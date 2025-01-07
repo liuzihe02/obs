@@ -87,8 +87,14 @@ assert len(results) == len(full_df)
 
 # filter out the hallucinations row
 eval_results = results["Answer_Faithfulness_Score"]  # Get the column
-eval_results.name = "eval"  # Rename it
-merged_df = pd.concat([full_df, eval_results], axis=1)  # Join horizontally
+eval_results.name = "eval_type"  # Rename it
+
+# Create a new DataFrame with the evaluation type
+eval_type = pd.Series(["ares"] * len(full_df), name="eval_type")
+
+merged_df = pd.concat(
+    [full_df, eval_results, eval_type], axis=1
+)  # Join horizontally without indexing oops
 
 print(merged_df)
 
