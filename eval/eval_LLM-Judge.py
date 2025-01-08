@@ -1,42 +1,24 @@
 # %%
 from langchain_openai import ChatOpenAI
 from langchain_anthropic import ChatAnthropic
+from langchain_core.language_models.base import BaseLanguageModel
 from langchain.prompts import PromptTemplate
 import os
 import pandas as pd
 from tqdm import tqdm
-from typing import Optional
+import asyncio
+from tqdm.asyncio import tqdm_asyncio
+from typing import Literal, Optional, Union
 
 # Optional for UES/IDP, configure API key for desired model(s)
 from dotenv import load_dotenv
 
 load_dotenv()
 
-
-def setup_models():
-    # Initialize models (you'll need appropriate API keys set as env variables)
-    models = {
-        "gpt": ChatOpenAI(model="gpt-4o-mini"),
-        # "claude": ChatAnthropic(model="claude-3-5-haiku-20241022"),
-    }
-    return models
-
-
-def create_prompt(mode: str, fewshot_df: None | pd.DataFrame):
-    # assert mode must be valid
-    assert mode in {
-        "base",
-        "cot",
-        "fewshot",
-    }
-
-    # if its fewshot, the fewshot dataframe must be provided
-    if mode == "fewshot":
-        assert fewshot_df is not None
-
+# specify prompt templates
+PROMPT_TEMPLATES = {
     # Simple prompt template that includes context and asks for verification
-    if mode == "base":
-        template = """
+    "base": """
         In this task, you will be presented with a query, a reference text and an answer. The answer is
         generated to the question based on the reference text. The answer may contain false information. Your objective is to determine whether the answer text contains factual information and is not a hallucination. A 'hallucination' refers to
         an answer that is not based on the reference text or assumes information that is not available in
@@ -54,10 +36,8 @@ def create_prompt(mode: str, fewshot_df: None | pd.DataFrame):
             [END DATA]
 
             Does the answer contain hallucinations?
-        """
-
-    elif mode == "cot":
-        template = """In this task, you will be presented with a query, a reference text and an answer. The answer is
+        """,
+    "cot": """In this task, you will be presented with a query, a reference text and an answer. The answer is
         generated to the question based on the reference text. The answer may contain false information. Your objective is to determine whether the answer text contains factual information and is not a hallucination. A 'hallucination' refers to
         an answer that is not based on the reference text or assumes information that is not available in
         the reference text. 
@@ -84,10 +64,8 @@ def create_prompt(mode: str, fewshot_df: None | pd.DataFrame):
         LABEL: 1 or 0
         ************
 
-        EXPLANATION:"""
-
-    elif mode == "fewshot":
-        template = """In this task, you will be presented with a query, a reference text and an answer. The answer is 
+        EXPLANATION:""",
+    "fewshot": """In this task, you will be presented with a query, a reference text and an answer. The answer is 
         generated to the question based on the reference text. The answer may contain false information. Your objective is to determine whether the answer text contains factual information and is not a hallucination. A 'hallucination' refers to 
         an answer that is not based on the reference text or assumes information that is not available in the reference text.
 
@@ -108,7 +86,27 @@ def create_prompt(mode: str, fewshot_df: None | pd.DataFrame):
         [END DATA]
 
         Does the answer contain hallucinations? Please respond with ONLY a single number: 1 for hallucination or 0 for no hallucination (faithful to reference text), and it should NOT include any other text or characters like "
-        """
+        """,
+}
+
+
+def setup_models():
+    # Initialize models (you'll need appropriate API keys set as env variables)
+    models = {
+        "gpt": ChatOpenAI(model="gpt-4o-mini"),
+        # "claude": ChatAnthropic(model="claude-3-5-haiku-20241022"),
+    }
+    return models
+
+
+def create_prompt(
+    mode: Literal["base", "cot", "fewshot"], fewshot_df: None | pd.DataFrame
+) -> PromptTemplate:
+    template = PROMPT_TEMPLATES[mode]
+
+    # if its fewshot, the fewshot dataframe must be provided
+    if mode == "fewshot":
+        assert fewshot_df is not None
 
         # Generate examples string from fewshot DataFrame
         examples_text = ""
@@ -136,66 +134,99 @@ def create_prompt(mode: str, fewshot_df: None | pd.DataFrame):
     return PromptTemplate.from_template(template)
 
 
-def evaluate_answers(
-    eval_df: pd.DataFrame, mode: str, fewshot_df: None | pd.DataFrame = None
+# asynchronous calls
+async def evaluate_single_qa(
+    row: pd.Series,
+    model_name: str,
+    model: BaseLanguageModel,
+    prompt_template: PromptTemplate,
+    mode: Literal["base", "cot", "fewshot"],
+) -> Optional[dict[str, Union[str, int]]]:
+    # Format the prompt
+    formatted_prompt = prompt_template.format(
+        question=row["question"], passage=row["passage"], answer=row["answer"]
+    )
+
+    print(formatted_prompt)
+
+    try:
+        # Get model response, this part can let other tasks use
+        # use ainvoke for async invoke
+        response = await model.ainvoke(formatted_prompt)
+        # some formatting
+        message = response.content.strip()
+
+        if mode == "base" or mode == "fewshot":
+            # get the response as an integer - and FLIP IT
+            # this is because we told the model 1 is hallucination, but for analysis 1 is faithful
+            res = 1 - int(message)
+        elif mode == "cot":
+            # the final integer in the string
+            res = 1 - int(message[-1])
+
+        # Store result
+        return {
+            "id": row["id"],
+            "eval_type": mode + "_" + model_name,
+            "eval_result": res,
+        }
+    except ValueError:
+        print(f"Error parsing response: {message}")
+        return None
+
+
+async def evaluate_answers(
+    eval_df: pd.DataFrame,
+    mode: Literal["base", "cot", "fewshot"],
+    fewshot_df: None | pd.DataFrame = None,
 ) -> pd.DataFrame:
     # Setup models and prompt
     models = setup_models()
-    prompt = create_prompt(mode, fewshot_df)
+    prompt_template = create_prompt(mode, fewshot_df)
 
-    results = []
-
-    # Evaluate each QA pair with each model
-    for idx, row in tqdm(eval_df.iterrows(), total=len(eval_df)):
+    tasks = []
+    for _, row in eval_df.iterrows():
         for model_name, model in models.items():
-            # Format the prompt
-            formatted_prompt = prompt.format(
-                question=row["question"], passage=row["passage"], answer=row["answer"]
-            )
-            try:
-                # Get model response
-                response = model.invoke(formatted_prompt).content.strip()
+            # define the function
+            task = evaluate_single_qa(row, model_name, model, prompt_template, mode)
+            # add this task
+            tasks.append(asyncio.create_task(task))
 
-                if mode == "base" or mode == "fewshot":
-                    # get the response as an integer - and FLIP IT
-                    # this is because we told the model 1 is hallucination, but for analysis 1 is faithful
-                    print(formatted_prompt)
-                    res = 1 - int(response)
-                elif mode == "cot":
-                    # the final integer in the string
-                    res = 1 - int(response[-1])
-            except ValueError:
-                print(f"Error parsing response: {response}")
+    # Use asyncio.gather to run tasks concurrently
+    results = []
+    for result in tqdm(await asyncio.gather(*tasks)):
+        if result:
+            results.append(result)
 
-            # Store result
-            results.append(
-                {
-                    "id": row["id"],
-                    "eval_type": mode + "_" + model_name,
-                    "eval_result": res,
-                }
-            )
-
-    # Convert results to DataFrame
-    results_df = pd.DataFrame(results)
+    # convert to dataframe
+    results_df = pd.DataFrame([r for r in results if r is not None])
 
     # Merge results with original DataFrame
-    merged_df = df.merge(results_df, on="id", how="left")
+    merged_df = eval_df.merge(results_df, on="id", how="left", validate="1:1")
     return merged_df
 
 
-# %% run the base hallucination detection
-csv_path = "../data/custom_16samples_fewshot.csv"
-df = pd.read_csv(csv_path)
-results = evaluate_answers(eval_df=df, mode="base")
+# %% Modified run section
+async def run_evaluation():
+    csv_path = "../data/custom_16samples_fewshot.csv"
+    df = pd.read_csv(csv_path)
 
-# Save results
-results.to_csv("../data/custom_16samples_eval_llm-judge-base.csv", index=False)
+    # # Run base evaluation
+    # base_results = await evaluate_answers(eval_df=df, mode="base")
+    # base_results.to_csv("../data/custom_16samples_eval_llm-judge-base.csv", index=False)
 
-# %% fewshot
-csv_path = "../data/custom_16samples_fewshot.csv"
-df = pd.read_csv(csv_path)
-results = evaluate_answers(eval_df=df, mode="fewshot", fewshot_df=df)
+    # Run fewshot evaluation
+    fewshot_results = await evaluate_answers(eval_df=df, mode="fewshot", fewshot_df=df)
+    fewshot_results.to_csv(
+        "../data/custom_16samples_eval_llm-judge-fewshot.csv", index=False
+    )
 
-# Save results
-results.to_csv("../data/custom_16samples_eval_llm-judge-fewshot.csv", index=False)
+
+# For Jupyter notebook, use this:
+await run_evaluation()
+
+# For regular Python script, use this instead:
+# if __name__ == "__main__":
+#     asyncio.run(run_evaluation())
+
+# %%
