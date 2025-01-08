@@ -135,3 +135,13 @@ else:
     print("Success: No overlapping examples found between the datasets")
     print(f"Number of unique IDs in full dataset: {len(full_df_ids)}")
     print(f"Number of unique IDs in few-shot dataset: {len(fewshot_df_ids)}")
+
+
+# %% filter datasets for pubmedqa and ragtruth only, because RAGAS only accepts long form context
+full_df = pd.read_csv("data/custom_40samples_full.csv")
+ragas_df = full_df[full_df["source_ds"].isin(["pubmedQA", "RAGTruth"])]
+
+# Save filtered dataset
+ragas_df.to_csv("data/custom_40samples_full_ragas.csv", index=False)
+
+# %%

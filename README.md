@@ -47,6 +47,11 @@ We use both `openai` and `anthropic` models. We use a similar prompt template to
 
 > Answer faithfulness metric doesn't work well for single word answers, which comprise a huge portion of data
 
+We only use the subset of the datasets RAGTruth and PubMedQA for this, as these datasets are longform contexts.
+
+- Base RAGAS faithfulness
+- Faithfulness with HHEM
+
 ## Tips
 
 [To reformat these in `README` properly later. currently these are collected notes/tips]
