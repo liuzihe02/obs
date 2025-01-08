@@ -47,8 +47,12 @@ results = evaluate(dataset=eval_dataset, metrics=metrics)
 
 # %% do some processing into the right data format
 results_fth = results["faithfulness"]
+# convert to binary labels
+results_fth = [1 if score > 0.5 else 0 for score in results_fth]
 # convert the list of tensor objects to floats
 results_fth_hhem = [t.item() for t in results["faithfulness_with_hhem"]]
+# also convert to binary labels. 1 for faithful, PASS basically.
+results_fth_hhem = [1 if score > 0.5 else 0 for score in results_fth_hhem]
 
 # First create individual dataframes for each eval type
 # concat horizontally
