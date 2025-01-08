@@ -55,8 +55,7 @@ PROMPT_TEMPLATES = {
         Does the answer contain hallucinations?
 
         Please read the query, reference text and answer carefully, then write out in a step by step manner
-        an EXPLANATION to determine if a 'hallucination' is present. Avoid simply
-        stating the correct answer at the outset. END your response with LABEL, which should be a a SINGLE number: either 1 or 0, and it should NOT include any other text or characters like ". 1 indicates hallucinations and 0 indicates no hallucinations (faithful to reference text).
+        an EXPLANATION to determine if a 'hallucination' is present. Avoid simply stating the correct answer at the outset. END your response with LABEL, which should be a a SINGLE number: either 1 or 0, and it should NOT include any other text or characters like ". 1 indicates hallucinations and 0 indicates no hallucinations (faithful to reference text).
 
         Example response:
         ************
@@ -66,8 +65,7 @@ PROMPT_TEMPLATES = {
 
         EXPLANATION:""",
     "fewshot": """In this task, you will be presented with a query, a reference text and an answer. The answer is 
-        generated to the question based on the reference text. The answer may contain false information. Your objective is to determine whether the answer text contains factual information and is not a hallucination. A 'hallucination' refers to 
-        an answer that is not based on the reference text or assumes information that is not available in the reference text.
+        generated to the question based on the reference text. The answer may contain false information. Your objective is to determine whether the answer text contains factual information and is not a hallucination. A 'hallucination' refers to an answer that is not based on the reference text or assumes information that is not available in the reference text.
 
         Here are some examples to help you understand the task:
 
@@ -134,52 +132,102 @@ def create_prompt(
     return PromptTemplate.from_template(template)
 
 
-# asynchronous calls
-async def evaluate_single_qa(
+# # asynchronous calls
+# async def evaluate_qa(
+#     row: pd.Series,
+#     model_name: str,
+#     model: BaseLanguageModel,
+#     prompt_template: PromptTemplate,
+#     mode: Literal["base", "cot", "fewshot"],
+#     num_samples: int,
+# ) -> Optional[dict[str, Union[str, int]]]:
+#     """take in a prompt and make some calls to a model"""
+
+#     # Format the prompt
+#     formatted_prompt = prompt_template.format(
+#         question=row["question"], passage=row["passage"], answer=row["answer"]
+#     )
+
+#     print(formatted_prompt)
+
+#     try:
+#         # Get model response, this part can let other tasks use
+#         # use ainvoke for async invoke
+#         response = await model.ainvoke(formatted_prompt)
+#         # some formatting
+#         message = response.content.strip()
+
+#         if mode == "base" or mode == "fewshot":
+#             # get the response as an integer - and FLIP IT
+#             # this is because we told the model 1 is hallucination, but for analysis 1 is faithful
+#             res = 1 - int(message)
+#         elif mode == "cot":
+#             # the final integer in the string
+#             res = 1 - int(message[-1])
+
+#         # Store result
+#         return {
+#             "id": row["id"],
+#             "eval_type": mode + "_" + model_name,
+#             "eval_result": res,
+#         }
+#     except ValueError:
+#         print(f"Error parsing response: {message}")
+#         return None
+
+
+async def process_batch(
     row: pd.Series,
+    prompt_template: PromptTemplate,
     model_name: str,
     model: BaseLanguageModel,
-    prompt_template: PromptTemplate,
     mode: Literal["base", "cot", "fewshot"],
+    num_samples: int = 1,
 ) -> Optional[dict[str, Union[str, int]]]:
-    # Format the prompt
+    """Makes multiple of the SAME API call and process responses
+    then averages the results"""
+
     formatted_prompt = prompt_template.format(
         question=row["question"], passage=row["passage"], answer=row["answer"]
     )
 
-    print(formatted_prompt)
+    # stores the results of multiple of the same calls
+    results = []
+    for _ in range(num_samples):
+        try:
+            response = await model.ainvoke(formatted_prompt)
+            message = response.content.strip()
 
-    try:
-        # Get model response, this part can let other tasks use
-        # use ainvoke for async invoke
-        response = await model.ainvoke(formatted_prompt)
-        # some formatting
-        message = response.content.strip()
+            if mode == "base" or mode == "fewshot":
+                res = 1 - int(message)
+            elif mode == "cot":
+                res = 1 - int(message[-1])
+                # note that this task will not proceed sequentially!
+            results.append(res)
 
-        if mode == "base" or mode == "fewshot":
-            # get the response as an integer - and FLIP IT
-            # this is because we told the model 1 is hallucination, but for analysis 1 is faithful
-            res = 1 - int(message)
-        elif mode == "cot":
-            # the final integer in the string
-            res = 1 - int(message[-1])
+        except ValueError as e:
+            print(f"Error processing response: {e}")
+            return None
 
-        # Store result
-        return {
-            "id": row["id"],
-            "eval_type": mode + "_" + model_name,
-            "eval_result": res,
-        }
-    except ValueError:
-        print(f"Error parsing response: {message}")
-        return None
+    # check concurrency
+    # print(formatted_prompt[700:1200], "======", results)
+
+    return {
+        "id": row["id"],
+        "eval_type": mode + "_" + model_name,
+        "eval_result": round(sum(results) / len(results)),
+        # round basically converts a float to 0/1 binary labels
+    }
 
 
-async def evaluate_answers(
+async def evaluate(
     eval_df: pd.DataFrame,
     mode: Literal["base", "cot", "fewshot"],
+    num_samples: int = 1,
     fewshot_df: None | pd.DataFrame = None,
 ) -> pd.DataFrame:
+    # num samples is for chainpoll or basepoll
+
     # Setup models and prompt
     models = setup_models()
     prompt_template = create_prompt(mode, fewshot_df)
@@ -187,23 +235,18 @@ async def evaluate_answers(
     tasks = []
     for _, row in eval_df.iterrows():
         for model_name, model in models.items():
-            # define the function
-            task = evaluate_single_qa(row, model_name, model, prompt_template, mode)
-            # add this task
+            task = process_batch(
+                row, prompt_template, model_name, model, mode, num_samples
+            )
             tasks.append(asyncio.create_task(task))
 
-    # Use asyncio.gather to run tasks concurrently
     results = []
     for result in tqdm(await asyncio.gather(*tasks)):
         if result:
             results.append(result)
 
-    # convert to dataframe
-    results_df = pd.DataFrame([r for r in results if r is not None])
-
-    # Merge results with original DataFrame
-    merged_df = eval_df.merge(results_df, on="id", how="left", validate="1:1")
-    return merged_df
+    results_df = pd.DataFrame(results)
+    return eval_df.merge(results_df, on="id", how="left", validate="1:m")
 
 
 # %% Modified run section
@@ -211,15 +254,15 @@ async def run_evaluation():
     csv_path = "../data/custom_16samples_fewshot.csv"
     df = pd.read_csv(csv_path)
 
-    # # Run base evaluation
-    # base_results = await evaluate_answers(eval_df=df, mode="base")
-    # base_results.to_csv("../data/custom_16samples_eval_llm-judge-base.csv", index=False)
+    # Run base evaluation
+    base_results = await evaluate(eval_df=df, mode="base", num_samples=5)
+    base_results.to_csv("../data/eval_llm-judge-base_custom_16samples.csv", index=False)
 
     # Run fewshot evaluation
-    fewshot_results = await evaluate_answers(eval_df=df, mode="fewshot", fewshot_df=df)
-    fewshot_results.to_csv(
-        "../data/custom_16samples_eval_llm-judge-fewshot.csv", index=False
-    )
+    # fewshot_results = await evaluate(eval_df=df, mode="fewshot", fewshot_df=df)
+    # fewshot_results.to_csv(
+    #     "../data/eval_llm-judge-base_custom_16samples.csv", index=False
+    # )
 
 
 # For Jupyter notebook, use this:
