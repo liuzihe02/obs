@@ -47,7 +47,7 @@ df.to_csv("data/halubench/raw_halubench.csv", index=False)
 
 
 # %%
-def create_balanced_dataset(df, total_size, output_path):
+def create_balanced_dataset(df: pd.DataFrame, full_size: int, fewshot_size: int):
     """
     We use RAGTruth, HaluEval, and PubMedQA, and FinanceBench
     Each kind of dataset takes equal proportion of total dataset
@@ -59,65 +59,71 @@ def create_balanced_dataset(df, total_size, output_path):
     selected_datasets = ["RAGTruth", "halueval", "pubmedQA", "FinanceBench"]
 
     # Calculate samples needed per dataset
-    samples_per_dataset = total_size // len(selected_datasets)
-    # Ensure it's even for PASS/FAIL balance
-    assert samples_per_dataset % 2 == 0
+    full_samples_per_dataset = full_size // len(selected_datasets)
+    fewshot_samples_per_dataset = fewshot_size // len(selected_datasets)
+    # Ensure they're even for PASS/FAIL balance
+    assert full_samples_per_dataset % 2 == 0, "full_size must be divisible by 8"
+    assert fewshot_samples_per_dataset % 2 == 0, "fewshot_size must be divisible by 8"
 
-    final_dfs = []
+    full_dfs = []
+    fewshot_dfs = []
 
     for dataset in selected_datasets:
         # Filter for current dataset
         dataset_df = df[df["source_ds"] == dataset]
 
-        # Get balanced samples for PASS and FAIL
-        samples_per_label = samples_per_dataset // 2
+        # Calculate samples needed per label
+        full_samples_per_label = full_samples_per_dataset // 2
+        fewshot_samples_per_label = fewshot_samples_per_dataset // 2
 
-        # randomly sample some
-        pass_samples = dataset_df[dataset_df["label"] == "PASS"].sample(
-            n=samples_per_label, random_state=41
-        )
-        fail_samples = dataset_df[dataset_df["label"] == "FAIL"].sample(
-            n=samples_per_label, random_state=41
-        )
+        for label in ["PASS", "FAIL"]:
+            # Get all samples for this dataset and label
+            label_df: pd.DataFrame = dataset_df[dataset_df["label"] == label]
 
-        # Combine PASS and FAIL samples
-        balanced_dataset = pd.concat([pass_samples, fail_samples])
-        final_dfs.append(balanced_dataset)
+            # Randomly sample without replacement for both datasets
+            total_needed = full_samples_per_label + fewshot_samples_per_label
+            all_samples = label_df.sample(n=total_needed, random_state=42)
 
-    # Combine all datasets
-    final_df = pd.concat(final_dfs)
+            # Split into full and few-shot
+            full_samples = all_samples.iloc[:full_samples_per_label]
+            fewshot_samples = all_samples.iloc[full_samples_per_label:]
 
-    # Save to CSV
-    final_df.to_csv(output_path, index=False)
+            full_dfs.append(full_samples)
+            fewshot_dfs.append(fewshot_samples)
 
-    print(f"Dataset creation complete. Total samples: {len(final_df)}")
-    print("\nDistribution by source:")
-    print(final_df["source_ds"].value_counts())
+        # Combine all samples
+    full_df = pd.concat(full_dfs)
+    fewshot_df = pd.concat(fewshot_dfs)
+
+    # Print statistics
+    print(f"Dataset creation complete.")
+    print(f"\nFull dataset ({len(full_df)} samples) distribution by source:")
+    print(full_df["source_ds"].value_counts())
     print("\nDistribution by label:")
-    print(final_df["label"].value_counts())
+    print(full_df["label"].value_counts())
 
-    return final_df
+    print(f"\nFew-shot dataset ({len(fewshot_df)} samples) distribution by source:")
+    print(fewshot_df["source_ds"].value_counts())
+    print("\nDistribution by label:")
+    print(fewshot_df["label"].value_counts())
+
+    return full_df, fewshot_df
 
 
 df = pd.read_csv("data/halubench/raw_halubench.csv")
 
-# %% 40 data points
+# %% bigger dataset
 
-full_df = create_balanced_dataset(
-    df, total_size=40, output_path="data/custom_40samples.csv"
-)
-
-# %% create 10 data points for few shot prompting
-fewshot_df = create_balanced_dataset(
-    df, total_size=16, output_path="data/custom_16samples.csv"
-)
+full_df, fewshot_df = create_balanced_dataset(df, 1000, 16)
+full_df.to_csv("data/custom_1000samples.csv")
+fewshot_df.to_csv("data/custom_16samples.csv")
 
 # %%
 # load back in the 2 datasets
 # make sure the full_df and fewshot_df dont have overlapping examples
 # Get sets of IDs from both dataframes
 # Load the saved datasets
-full_df = pd.read_csv("data/custom_40samples.csv")
+full_df = pd.read_csv("data/custom_1000samples.csv")
 fewshot_df = pd.read_csv("data/custom_16samples.csv")
 
 full_df_ids = set(full_df["id"])

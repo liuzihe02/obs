@@ -7,6 +7,7 @@ import os
 import pandas as pd
 from tqdm import tqdm
 import asyncio
+from asyncio import Semaphore
 from tqdm.asyncio import tqdm_asyncio
 from typing import Literal, Optional, Union
 
@@ -55,13 +56,12 @@ PROMPT_TEMPLATES = {
         Does the answer contain hallucinations?
 
         Please read the query, reference text and answer carefully, then write out in a step by step manner
-        an EXPLANATION to determine if a 'hallucination' is present. Avoid simply stating the correct answer at the outset. END your response with LABEL, which should be a a SINGLE number: either 1 or 0, and it should NOT include any other text or characters like ". 1 indicates hallucinations and 0 indicates no hallucinations (faithful to reference text).
+        an EXPLANATION to determine if a 'hallucination' is present. Avoid simply stating the correct answer at the outset. END the very last token of your response with LABEL, which should be a a SINGLE number: either 1 or 0, and it should NOT include any other text or characters like ". 1 indicates hallucinations and 0 indicates no hallucinations (faithful to reference text).
 
         Example response:
-        ************
+
         EXPLANATION: An explanation of your reasoning for why 'hallucination' is present
         LABEL: 1 or 0
-        ************
 
         EXPLANATION:""",
     "fewshot": """In this task, you will be presented with a query, a reference text and an answer. The answer is 
@@ -91,7 +91,8 @@ PROMPT_TEMPLATES = {
 def setup_models():
     # Initialize models (you'll need appropriate API keys set as env variables)
     models = {
-        "gpt-4o-mini": ChatOpenAI(model="gpt-4o-mini"),
+        "gpt-4o": ChatOpenAI(model="gpt-4o"),
+        # "gpt-4o-mini": ChatOpenAI(model="gpt-4o-mini"),
         # "claude": ChatAnthropic(model="claude-3-5-haiku-20241022"),
     }
     return models
@@ -163,6 +164,8 @@ async def process_batch(
 
         except ValueError as e:
             print(f"Error processing response: {e}")
+            print("prompt was", formatted_prompt)
+            print("message was", message[-100:])
             return None
 
     # check concurrency
@@ -180,9 +183,21 @@ async def evaluate(
     eval_df: pd.DataFrame,
     mode: Literal["base", "cot", "fewshot"],
     num_samples: int = 1,
+    max_crr: int = 20,
     fewshot_df: None | pd.DataFrame = None,
 ) -> pd.DataFrame:
     # num samples is for chainpoll or basepoll
+
+    # limits how many api calls we can make at once
+    semaphore = Semaphore(max_crr)
+
+    async def limited_process_batch(
+        row, prompt_template, model_name, model, mode, num_samples
+    ):
+        async with semaphore:  # Limit concurrent process_batch tasks
+            return await process_batch(
+                row, prompt_template, model_name, model, mode, num_samples
+            )
 
     # Setup models and prompt
     models = setup_models()
@@ -191,13 +206,13 @@ async def evaluate(
     tasks = []
     for _, row in eval_df.iterrows():
         for model_name, model in models.items():
-            task = process_batch(
+            task = limited_process_batch(
                 row, prompt_template, model_name, model, mode, num_samples
             )
             tasks.append(asyncio.create_task(task))
 
     results = []
-    for result in tqdm(await asyncio.gather(*tasks)):
+    for result in await tqdm_asyncio.gather(*tasks, desc=f"Running {mode} evaluation"):
         if result:
             results.append(result)
 
@@ -207,34 +222,46 @@ async def evaluate(
 
 # %% Modified run section
 async def run_evaluation():
-    csv_path = "../data/custom_16samples.csv"
-    df = pd.read_csv(csv_path)
+    full_df = pd.read_csv("../data/custom_1000samples.csv")
+    fewshot_df = pd.read_csv("../data/custom_16samples.csv")
 
     # # Run base evaluation
-    # base_results = await evaluate(eval_df=df, mode="base", num_samples=1)
-    # base_results.to_csv("../data/eval_llm-judge-base_custom_16samples.csv", index=False)
+    # base_results = await evaluate(eval_df=full_df, mode="base", num_samples=1, max_crr=100)
+    # base_results.to_csv(
+    #     "../data/eval_llm-judge-base_custom_1000samples.csv", index=False
+    # )
 
     # # basepoll
-    # base_results = await evaluate(eval_df=df, mode="base", num_samples=5)
+    # base_results = await evaluate(
+    #     eval_df=full_df, mode="base", num_samples=5, max_crr=100
+    # )
     # base_results.to_csv(
     #     "../data/eval_llm-judge-basepoll_custom_16samples.csv", index=False
     # )
 
     # # Run fewshot evaluation
-    # fewshot_results = await evaluate(eval_df=df, mode="fewshot", fewshot_df=df)
+    # fewshot_results = await evaluate(
+    #     eval_df=full_df, mode="fewshot", fewshot_df=fewshot_df, max_crr=100
+    # )
     # fewshot_results.to_csv(
-    #     "../data/eval_llm-judge-fewshot_custom_16samples.csv", index=False
+    #     "../data/eval_llm-judge-fewshot_custom_1000samples.csv", index=False
     # )
 
     # # cot
-    # base_results = await evaluate(eval_df=df, mode="cot", num_samples=1)
-    # base_results.to_csv("../data/eval_llm-judge-cot_custom_16samples.csv", index=False)
+    # base_results = await evaluate(
+    #     eval_df=full_df, mode="cot", num_samples=1, max_crr=100
+    # )
+    # base_results.to_csv(
+    #     "../data/eval_llm-judge-cot_custom_1000samples.csv", index=False
+    # )
 
-    # chainpoll
-    base_results = await evaluate(eval_df=df, mode="cot", num_samples=5)
-    base_results.to_csv(
-        "../data/eval_llm-judge-chainpoll_custom_16samples.csv", index=False
-    )
+    # # chainpoll
+    # base_results = await evaluate(
+    #     eval_df=full_df, mode="cot", num_samples=5, max_crr=150
+    # )
+    # base_results.to_csv(
+    #     "../data/eval_llm-judge-chainpoll_custom_1000samples.csv", index=False
+    # )
 
 
 # For Jupyter notebook, use this:
