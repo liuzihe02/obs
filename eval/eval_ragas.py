@@ -12,12 +12,13 @@ from ragas.metrics import (
     FaithfulnesswithHHEM,
 )
 
+# define the llm here
 evaluator_llm = LangchainLLMWrapper(ChatOpenAI(model="gpt-4o-mini"))
 evaluator_embeddings = LangchainEmbeddingsWrapper(OpenAIEmbeddings())
 
 
 # load from csv into ragas dataset for evaluation
-def load_and_prepare_dataset(dataset_df: pd.DataFrame) -> EvaluationDataset:
+def process_data_ragas(dataset_df: pd.DataFrame) -> EvaluationDataset:
     # Use 'Context_Relevance_Label' as 'ground_truth'
     prepared_data = {
         "user_input": dataset_df["question"].tolist(),
@@ -41,7 +42,7 @@ metrics = [
 ]
 # Load the dataset from the TSV file
 eval_df = pd.read_csv("../data/custom_40samples_full_ragas.csv")
-eval_dataset = load_and_prepare_dataset(eval_df)
+eval_dataset = process_data_ragas(eval_df)
 # return the full set of scores for all samples
 results = evaluate(dataset=eval_dataset, metrics=metrics)
 
@@ -49,8 +50,8 @@ results = evaluate(dataset=eval_dataset, metrics=metrics)
 results_fth = results["faithfulness"]
 # convert to binary labels
 results_fth = [1 if score > 0.5 else 0 for score in results_fth]
-# convert the list of tensor objects to floats
-results_fth_hhem = [t.item() for t in results["faithfulness_with_hhem"]]
+# convert the list of tensor objects to floats, some versions have tensors some versions have floats
+results_fth_hhem = results["faithfulness_with_hhem"]
 # also convert to binary labels. 1 for faithful, PASS basically.
 results_fth_hhem = [1 if score > 0.5 else 0 for score in results_fth_hhem]
 

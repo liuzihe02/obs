@@ -8,9 +8,21 @@ venv/
 #cache
 # Python cache files
 __pycache__/
+# Pytest cache
+.pytest_cache/
+*.pyc
+
+# General cache patterns
+**/*.cache/
+**/__pycache__/
+# DeepEval specific
+*.deepeval-cache.json
+*.deepeval_telemtry.txt
 
 #experiment folders
 experiment/
 
 #some unneccessary data
 data/ares
+
+notes.md

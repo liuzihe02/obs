@@ -1,0 +1,17 @@
+,id,eval_result,eval_reason
+0,15712,0,"The response accurately identifies the difference between sirloin and porterhouse steaks, referencing key points from the context about the cut location and size, but it could more explicitly mention that sirloin steak itself is a different cut from the back of the animal."
+1,halueval-1234,0,"The actual output incorrectly states that the primary listing is on NASDAQ, while the context confirms it is on the London Stock Exchange."
+2,halueval-2227,0,"The actual output correctly states the birth date of Rick Barnes, who was the head coach of the Texas Longhorns men's basketball team during the 2009-2010 season, as supported by the context."
+3,15136629,0,"The output accurately mentions the impact of weight on emission scan durations and lesion detectability, aligning well with the context, but lacks specific statistical details from the study."
+4,27541280,0,"The actual output incorrectly states that NAFLD is associated with ISEN and ISEC, contradicting the context which indicates that the NAFLD·ISEN interaction was not significant."
+5,financebench_id_05488,0,The actual output of 122.7% is incorrect as it does not accurately reflect the year-over-year change in unadjusted operating income based on the figures from the context.
+6,financebench_id_08167,0,"The Actual Output of 15.2% does not correspond to any information in the Context, which does not provide a net profit margin percentage."
+7,16852,1,"The output accurately outlines the differences and similarities as requested, directly referencing the context regarding functions, composition, and shared characteristics of red and white blood cells."
+8,23676712,0,"The actual output incorrectly states that the prevalence of disability is low, contradicting the context which indicates that nearly 25% of women reported moderate to extreme disability."
+9,halueval-7375,0,"The actual output contradicts the context, which states Breidis Prescott is a professional boxer and does not mention that he has no nickname."
+10,halueval-252,1,"The actual output correctly identifies that Patrick Brontë spent most of his adult life in England, which is directly supported by the context provided."
+11,12066,1,"The output accurately reflects the context by detailing Magellan of Virginia's role as the Behavioral Health Services Administrator, their administration of behavioral health services for Medicaid and FAMIS, the weekly Q&A sessions for providers, and the provision of continuing education credits, all supported by the context."
+12,financebench_id_07294,0,"The output gives a numerical value, but it lacks the calculation details for the asset turnover ratio using FY2020 revenue and average total assets, which should be explicitly derived from the context."
+13,15928,1,"The actual output accurately explains that Mark Hurd and Safra Catz were appointed as co-CEOs after Larry Ellison stepped down, directly aligning with the context provided."
+14,financebench_id_09952,0,"The actual output of 0.11 does not correctly calculate the FY2022 ROA based on the net income of 5,732 million and average total assets of 51,876.5 million from the context."
+15,27330686,1,"The output accurately states that short-term treatment with simvastatin does not significantly affect serum levels of Vitamin D, aligning with the context provided."

@@ -2,31 +2,30 @@
 # humanloop
 
 #datasets for compatibility with ARES
-datasets==2.12.0
+datasets<=2.12.0
 openai
 arize-phoenix>=4.29.0
-arize-phoenix-otel
-openai
+#arize-phoenix-otel
 nest_asyncio
 httpx<0.28
 pandas
 python-dotenv
 
-openinference-instrumentation-langchain
+#openinference-instrumentation-langchain
 langchain
 langchain-openai
 langchain-community
 langchain-anthropic
 
-
 #this is galileo
-promptquality
-faiss-cpu
-ipywidgets
-traceloop-sdk
-ragas
-google-generativeai
-vertexai
+
+# promptquality
+# faiss-cpu
+# ipywidgets
+#traceloop-sdk
+#google-generativeai
+#vertexai
 #ARES
 ares-ai==0.6.6
 ragas
+deepeval

@@ -25,6 +25,12 @@ def transform_dataframe(df):
         {"FAIL": "[[No]]", "PASS": "[[Yes]]"}
     )
 
+    # add the context relevance column and answer relevancy column
+    # NOTE: this assumes all the context and answers are relevant; which is probably untrue in practice
+    # however we dont extract this so should be fine
+    df["Context_Relevance_Label"] = "[[Yes]]"
+    df["Answer_Relevance_Label"] = "[[Yes]]"
+
     return df
 
 
@@ -64,7 +70,7 @@ print(
 ues_idp_config = {
     "in_domain_prompts_dataset": "../data/custom_16samples_fewshot_ares.tsv",
     "unlabeled_evaluation_set": "../data/custom_40samples_full_ares.tsv",
-    "model_choice": "gpt-4o",
+    "model_choice": "gpt-4o-mini",
 }
 
 # uses fewshot examples from IDS
@@ -74,7 +80,7 @@ ares = ARES(ues_idp=ues_idp_config)
 results = ares.ues_idp()["Raw Scores"]
 print(results)
 
-# note i had to modify the source code to return the raw scores too!
+# NOTE: i had to modify the source code to return the raw scores too!
 
 # {'Context Relevance Scores': [Score], 'Answer Faithfulness Scores': [Score], 'Answer Relevance Scores': [Score]}
 
@@ -87,7 +93,7 @@ assert len(results) == len(full_df)
 
 # filter out the hallucinations row
 eval_results = results["Answer_Faithfulness_Score"]  # Get the column
-eval_results.name = "eval_type"  # Rename it
+eval_results.name = "eval_result"  # Rename it
 
 # Create a new DataFrame with the evaluation type
 eval_type = pd.Series(["ares"] * len(full_df), name="eval_type")
@@ -99,6 +105,6 @@ merged_df = pd.concat(
 print(merged_df)
 
 # %% save the evaluated results
-merged_df.to_csv("../data/custom_40samples_full_ares_eval.csv")
+merged_df.to_csv("../data/eval_ares_custom_40samples.csv")
 
 # %%
