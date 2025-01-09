@@ -41,7 +41,7 @@ metrics = [
     FaithfulnesswithHHEM(),
 ]
 # Load the dataset from the TSV file
-eval_df = pd.read_csv("../data/custom_40samples_ragas.csv")
+eval_df = pd.read_csv("../data/custom_16samples_ragas.csv")
 eval_dataset = process_data_ragas(eval_df)
 # return the full set of scores for all samples
 results = evaluate(dataset=eval_dataset, metrics=metrics)
@@ -84,6 +84,6 @@ final_df = pd.concat(
 
 # %% this results in dataframe with multiple rows for each datapoint.
 # each datapoint row is repeated for each eval type
-final_df.to_csv("../data/eval_ragas_custom_40samples_ragas.csv")
+final_df.to_csv("../data/eval_ragas_custom_16samples_ragas.csv")
 
 # %%

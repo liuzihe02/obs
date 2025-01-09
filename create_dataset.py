@@ -138,10 +138,10 @@ else:
 
 
 # %% filter datasets for pubmedqa and ragtruth only, because RAGAS only accepts long form context
-full_df = pd.read_csv("data/custom_40samples.csv")
+full_df = pd.read_csv("data/custom_16samples.csv")
 ragas_df = full_df[full_df["source_ds"].isin(["pubmedQA", "RAGTruth"])]
 
 # Save filtered dataset
-ragas_df.to_csv("data/custom_40samples_ragas.csv", index=False)
+ragas_df.to_csv("data/custom_16samples_ragas.csv", index=False)
 
 # %%

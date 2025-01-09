@@ -35,7 +35,7 @@ def transform_dataframe(df):
 
 
 # Read the CSV files
-full_df = pd.read_csv("../data/custom_40samples.csv")
+full_df = pd.read_csv("../data/custom_16samples.csv")
 fewshot_df = pd.read_csv("../data/custom_16samples.csv")
 
 # Transform both dataframes
@@ -44,7 +44,7 @@ fewshot_df_transformed = transform_dataframe(fewshot_df)
 
 # Save the transformed dataframes
 # need to be explicitly tab separated in ARES
-full_df_transformed.to_csv("../data/ares_40samples.tsv", sep="\t", index=False)
+full_df_transformed.to_csv("../data/ares_16samples.tsv", sep="\t", index=False)
 fewshot_df_transformed.to_csv("../data/ares_16samples.tsv", sep="\t", index=False)
 
 # Print verification
@@ -65,7 +65,7 @@ print(
 
 ues_idp_config = {
     "in_domain_prompts_dataset": "../data/ares_16samples.tsv",
-    "unlabeled_evaluation_set": "../data/ares_40samples.tsv",
+    "unlabeled_evaluation_set": "../data/ares_16samples.tsv",
     "model_choice": "gpt-4o-mini",
 }
 
@@ -82,7 +82,7 @@ print(results)
 
 # %% data processing to save the new csv
 
-full_df = pd.read_csv("../data/custom_40samples.csv")
+full_df = pd.read_csv("../data/custom_16samples.csv")
 
 # first assert every result has an evaluation
 assert len(results) == len(full_df)
@@ -101,6 +101,6 @@ merged_df = pd.concat(
 print(merged_df)
 
 # %% save the evaluated results
-merged_df.to_csv("../data/eval_ares_40samples.csv")
+merged_df.to_csv("../data/eval_ares_16samples.csv")
 
 # %%
