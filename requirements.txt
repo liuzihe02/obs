@@ -29,3 +29,4 @@ langchain-anthropic
 ares-ai==0.6.6
 ragas
 deepeval
+patronus
