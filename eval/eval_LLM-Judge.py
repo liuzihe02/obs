@@ -91,7 +91,7 @@ PROMPT_TEMPLATES = {
 def setup_models():
     # Initialize models (you'll need appropriate API keys set as env variables)
     models = {
-        "gpt": ChatOpenAI(model="gpt-4o-mini"),
+        "gpt-4o-mini": ChatOpenAI(model="gpt-4o-mini"),
         # "claude": ChatAnthropic(model="claude-3-5-haiku-20241022"),
     }
     return models
@@ -132,50 +132,6 @@ def create_prompt(
     return PromptTemplate.from_template(template)
 
 
-# # asynchronous calls
-# async def evaluate_qa(
-#     row: pd.Series,
-#     model_name: str,
-#     model: BaseLanguageModel,
-#     prompt_template: PromptTemplate,
-#     mode: Literal["base", "cot", "fewshot"],
-#     num_samples: int,
-# ) -> Optional[dict[str, Union[str, int]]]:
-#     """take in a prompt and make some calls to a model"""
-
-#     # Format the prompt
-#     formatted_prompt = prompt_template.format(
-#         question=row["question"], passage=row["passage"], answer=row["answer"]
-#     )
-
-#     print(formatted_prompt)
-
-#     try:
-#         # Get model response, this part can let other tasks use
-#         # use ainvoke for async invoke
-#         response = await model.ainvoke(formatted_prompt)
-#         # some formatting
-#         message = response.content.strip()
-
-#         if mode == "base" or mode == "fewshot":
-#             # get the response as an integer - and FLIP IT
-#             # this is because we told the model 1 is hallucination, but for analysis 1 is faithful
-#             res = 1 - int(message)
-#         elif mode == "cot":
-#             # the final integer in the string
-#             res = 1 - int(message[-1])
-
-#         # Store result
-#         return {
-#             "id": row["id"],
-#             "eval_type": mode + "_" + model_name,
-#             "eval_result": res,
-#         }
-#     except ValueError:
-#         print(f"Error parsing response: {message}")
-#         return None
-
-
 async def process_batch(
     row: pd.Series,
     prompt_template: PromptTemplate,
@@ -214,7 +170,7 @@ async def process_batch(
 
     return {
         "id": row["id"],
-        "eval_type": mode + "_" + model_name,
+        "eval_type": mode + "_" + model_name + "_numsamples" + str(num_samples),
         "eval_result": round(sum(results) / len(results)),
         # round basically converts a float to 0/1 binary labels
     }
@@ -246,23 +202,39 @@ async def evaluate(
             results.append(result)
 
     results_df = pd.DataFrame(results)
-    return eval_df.merge(results_df, on="id", how="left", validate="1:m")
+    return results_df
 
 
 # %% Modified run section
 async def run_evaluation():
-    csv_path = "../data/custom_16samples_fewshot.csv"
+    csv_path = "../data/custom_16samples.csv"
     df = pd.read_csv(csv_path)
 
-    # Run base evaluation
-    base_results = await evaluate(eval_df=df, mode="base", num_samples=5)
-    base_results.to_csv("../data/eval_llm-judge-base_custom_16samples.csv", index=False)
+    # # Run base evaluation
+    # base_results = await evaluate(eval_df=df, mode="base", num_samples=1)
+    # base_results.to_csv("../data/eval_llm-judge-base_custom_16samples.csv", index=False)
 
-    # Run fewshot evaluation
+    # # basepoll
+    # base_results = await evaluate(eval_df=df, mode="base", num_samples=5)
+    # base_results.to_csv(
+    #     "../data/eval_llm-judge-basepoll_custom_16samples.csv", index=False
+    # )
+
+    # # Run fewshot evaluation
     # fewshot_results = await evaluate(eval_df=df, mode="fewshot", fewshot_df=df)
     # fewshot_results.to_csv(
-    #     "../data/eval_llm-judge-base_custom_16samples.csv", index=False
+    #     "../data/eval_llm-judge-fewshot_custom_16samples.csv", index=False
     # )
+
+    # # cot
+    # base_results = await evaluate(eval_df=df, mode="cot", num_samples=1)
+    # base_results.to_csv("../data/eval_llm-judge-cot_custom_16samples.csv", index=False)
+
+    # chainpoll
+    base_results = await evaluate(eval_df=df, mode="cot", num_samples=5)
+    base_results.to_csv(
+        "../data/eval_llm-judge-chainpoll_custom_16samples.csv", index=False
+    )
 
 
 # For Jupyter notebook, use this:

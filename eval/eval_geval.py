@@ -37,7 +37,7 @@ def process_data_deepeval(dataset_df: pd.DataFrame) -> EvaluationDataset:
 
 
 # Load the dataset from the TSV file
-eval_df = pd.read_csv("../data/custom_16samples_fewshot.csv")
+eval_df = pd.read_csv("../data/custom_16samples.csv")
 eval_dataset = process_data_deepeval(eval_df)
 
 
@@ -59,28 +59,6 @@ halu_metric = GEval(
     # view the COT
     verbose_mode=False,
 )
-
-# %% run the evals
-
-# """ to run several tests in parallel, do `deepeval test run test_bulk.py -n 3` where -n determines the number of processes to use"""
-
-# results = []
-
-
-# @pytest.mark.parametrize(
-#     "test_case",
-#     eval_dataset,
-# )
-# def test_all(test_case: LLMTestCase):
-#     # assert_test(test_case, [halu_metric])
-#     halu_metric.measure(test_case)
-#     results.append((halu_metric.score, halu_metric.reason))
-
-
-# @deepeval.on_test_run_end
-# def function_to_be_called_after_test_run():
-#     print("Test finished! Printing results")
-#     print(results)
 
 
 # %%

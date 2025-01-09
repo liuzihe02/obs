@@ -1,0 +1,17 @@
+id,eval_type,eval_result
+12066,base_gpt-4o-mini_numsamples5,1
+15928,base_gpt-4o-mini_numsamples5,1
+15712,base_gpt-4o-mini_numsamples5,1
+16852,base_gpt-4o-mini_numsamples5,1
+halueval-252,base_gpt-4o-mini_numsamples5,1
+halueval-2227,base_gpt-4o-mini_numsamples5,1
+halueval-7375,base_gpt-4o-mini_numsamples5,0
+halueval-1234,base_gpt-4o-mini_numsamples5,0
+27330686,base_gpt-4o-mini_numsamples5,1
+15136629,base_gpt-4o-mini_numsamples5,0
+23676712,base_gpt-4o-mini_numsamples5,0
+27541280,base_gpt-4o-mini_numsamples5,0
+financebench_id_05488,base_gpt-4o-mini_numsamples5,0
+financebench_id_09952,base_gpt-4o-mini_numsamples5,0
+financebench_id_08167,base_gpt-4o-mini_numsamples5,0
+financebench_id_07294,base_gpt-4o-mini_numsamples5,0

@@ -26,7 +26,7 @@ def process_data_lynx(df: pd.DataFrame) -> Dataset:
 
 
 # Load dataset
-eval_df = pd.read_csv("../data/custom_16samples_fewshot.csv")
+eval_df = pd.read_csv("../data/custom_16samples.csv")
 eval_dataset = process_data_lynx(eval_df)
 
 # Define evaluator - using Lynx-large for hallucination detection
