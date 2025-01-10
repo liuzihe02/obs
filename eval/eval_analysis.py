@@ -94,6 +94,6 @@ def analyze_eval_files(folder_path: str, dataset: str):
 
 # %% run all analysis
 folder_path = "../data"  # Adjust this to your data folder path
-analyze_eval_files(folder_path, "all")
+analyze_eval_files(folder_path, "FinanceBench")
 
 # %%

@@ -91,9 +91,10 @@ PROMPT_TEMPLATES = {
 def setup_models():
     # Initialize models (you'll need appropriate API keys set as env variables)
     models = {
-        "gpt-4o": ChatOpenAI(model="gpt-4o"),
+        # "gpt-4o": ChatOpenAI(model="gpt-4o"),
         # "gpt-4o-mini": ChatOpenAI(model="gpt-4o-mini"),
-        # "claude": ChatAnthropic(model="claude-3-5-haiku-20241022"),
+        # "3.5haiku": ChatAnthropic(model="claude-3-5-haiku-latest"),
+        "3.5sonnet": ChatAnthropic(model="claude-3-5-sonnet-latest"),
     }
     return models
 
@@ -226,10 +227,15 @@ async def run_evaluation():
     fewshot_df = pd.read_csv("../data/custom_16samples.csv")
 
     # # Run base evaluation
-    # base_results = await evaluate(eval_df=full_df, mode="base", num_samples=1, max_crr=100)
-    # base_results.to_csv(
-    #     "../data/eval_llm-judge-base_custom_1000samples.csv", index=False
+    # base_results = await evaluate(
+    #     eval_df=full_df, mode="base", num_samples=1, max_crr=2
     # )
+    # base_results.to_csv(
+    #     "../data/eval_llm-judge-base_custom_1000samples.csv",
+    #     index=False,
+    #     header=False,
+    #     mode="a",
+    # )  # append mode
 
     # # basepoll
     # base_results = await evaluate(
@@ -247,20 +253,24 @@ async def run_evaluation():
     #     "../data/eval_llm-judge-fewshot_custom_1000samples.csv", index=False
     # )
 
-    # # cot
-    # base_results = await evaluate(
-    #     eval_df=full_df, mode="cot", num_samples=1, max_crr=100
-    # )
-    # base_results.to_csv(
-    #     "../data/eval_llm-judge-cot_custom_1000samples.csv", index=False
-    # )
+    # cot
+    base_results = await evaluate(eval_df=full_df, mode="cot", num_samples=1, max_crr=3)
+    base_results.to_csv(
+        "../data/eval_llm-judge-cot_custom_1000samples.csv",
+        index=False,
+        header=False,
+        mode="a",
+    )  # append mode
 
     # # chainpoll
     # base_results = await evaluate(
     #     eval_df=full_df, mode="cot", num_samples=5, max_crr=150
     # )
     # base_results.to_csv(
-    #     "../data/eval_llm-judge-chainpoll_custom_1000samples.csv", index=False
+    #     "../data/eval_llm-judge-chainpoll_custom_1000samples.csv",
+    #     index=False,
+    #     header=False,
+    #     mode="a",
     # )
 
 
