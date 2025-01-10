@@ -38,7 +38,7 @@ def analyze_eval_files(folder_path: str, dataset: str):
     assert dataset in ["all", "RAGTruth", "halueval", "pubmedQA", "FinanceBench"]
 
     # Read ground truth file
-    gt_df = pd.read_csv(os.path.join(folder_path, "custom_16samples.csv"))
+    gt_df = pd.read_csv(os.path.join(folder_path, "custom_1000samples.csv"))
 
     # Filter ground truth for specific dataset if not "all"
     if dataset != "all":
@@ -85,4 +85,6 @@ def analyze_eval_files(folder_path: str, dataset: str):
 
 # %% run all analysis
 folder_path = "../data"  # Adjust this to your data folder path
-analyze_eval_files(folder_path, "FinanceBench")
+analyze_eval_files(folder_path, "all")
+
+# %%

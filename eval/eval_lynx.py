@@ -26,7 +26,7 @@ def process_data_lynx(df: pd.DataFrame) -> Dataset:
 
 
 # Load dataset
-eval_df = pd.read_csv("../data/custom_16samples.csv")
+eval_df = pd.read_csv("../data/custom_1000samples.csv")
 eval_dataset = process_data_lynx(eval_df)
 
 # Define evaluator - using Lynx-large for hallucination detection
@@ -67,7 +67,7 @@ for _, row in df_results.iterrows():
 
 # Save results
 results_df = pd.DataFrame(processed_results)
-results_df.to_csv("../data/eval_lynx_custom_16samples.csv", index=False)
+results_df.to_csv("../data/eval_lynx_custom_1000samples.csv", index=False)
 
 # Print summary statistics
 print("\nEvaluation Summary:")

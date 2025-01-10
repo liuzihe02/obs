@@ -35,7 +35,7 @@ def transform_dataframe(df):
 
 
 # Read the CSV files
-full_df = pd.read_csv("../data/custom_16samples.csv")
+full_df = pd.read_csv("../data/custom_1000samples.csv")
 fewshot_df = pd.read_csv("../data/custom_16samples.csv")
 
 # Transform both dataframes
@@ -44,7 +44,7 @@ fewshot_df_transformed = transform_dataframe(fewshot_df)
 
 # Save the transformed dataframes
 # need to be explicitly tab separated in ARES
-full_df_transformed.to_csv("../data/ares_16samples.tsv", sep="\t", index=False)
+full_df_transformed.to_csv("../data/ares_1000samples.tsv", sep="\t", index=False)
 fewshot_df_transformed.to_csv("../data/ares_16samples.tsv", sep="\t", index=False)
 
 # Print verification
@@ -65,8 +65,8 @@ print(
 
 ues_idp_config = {
     "in_domain_prompts_dataset": "../data/ares_16samples.tsv",
-    "unlabeled_evaluation_set": "../data/ares_16samples.tsv",
-    "model_choice": "gpt-4o-mini",
+    "unlabeled_evaluation_set": "../data/ares_1000samples.tsv",
+    "model_choice": "gpt-4o",
 }
 
 # uses fewshot examples from IDS
@@ -82,7 +82,7 @@ print(results)
 
 # %% data processing to save the new csv
 
-full_df = pd.read_csv("../data/custom_16samples.csv")
+full_df = pd.read_csv("../data/custom_1000samples.csv")
 
 # first assert every result has an evaluation
 assert len(results) == len(full_df)
