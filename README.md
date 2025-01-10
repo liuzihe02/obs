@@ -38,9 +38,9 @@ We benchmark industry hallucination detection tools against each other and curre
 | CoT (GPT-4o-mini, sampling) | 0.684 | 0.723 | 0.644 | 0.824 |
 | Fewshot (GPT-4o) | 0.648 | 0.703 | 0.608 | 0.832 |
 | Lynx | 0.724 | 0.760 | 0.673 | 0.872 |
-| RAGAS Faithfulness | 0.584 | 0.687 | 0.551 | 0.912 |
+| RAGAS Faithfulness (GPT-4o) | 0.584 | 0.687 | 0.551 | 0.912 |
 | RAGAS Faithfulness (HHEM) | 0.552 | 0.687 | 0.528 | **0.984** |
-| G-Eval Hallucination | 0.681 | 0.592 | **0.829** | 0.460 |
+| G-Eval Hallucination (GPT-4o) | 0.681 | 0.592 | **0.829** | 0.460 |
 
 *Results for RAGTruth*
 
@@ -58,7 +58,7 @@ We benchmark industry hallucination detection tools against each other and curre
 | CoT (GPT-4o-mini, sampling) | 0.864 | 0.874 | 0.814 | 0.944 |
 | Fewshot (GPT-4o) | 0.868 | 0.877 | 0.819 | 0.944 |
 | Lynx | 0.860 | 0.874 | 0.796 | 0.968 |
-| G-Eval Hallucination | 0.857 | 0.851 | **0.976** | 0.817 |
+| G-Eval Hallucination (GPT-4o) | 0.857 | 0.851 | **0.976** | 0.817 |
 
 *Results for HaluEval*
 
@@ -76,9 +76,9 @@ We benchmark industry hallucination detection tools against each other and curre
 | CoT (GPT-4o-mini, sampling) | 0.780 | 0.742 | 0.898 | 0.632 |
 | Fewshot (GPT-4o) | 0.860 | 0.874 | 0.796 | **0.968** |
 | Lynx | 0.800 | 0.806 | 0.782 | 0.832 |
-| RAGAS Faithfulness | 0.736 | 0.680 | 0.864 | 0.560 |
+| RAGAS Faithfulness (GPT-4o) | 0.736 | 0.680 | 0.864 | 0.560 |
 | RAGAS Faithfulness (HHEM) | 0.624 | 0.573 | 0.663 | 0.504 |
-| G-Eval Hallucination | 0.600 | 0.333 | 1.000 | 0.200 |
+| G-Eval Hallucination (GPT-4o) | 0.600 | 0.333 | 1.000 | 0.200 |
 
 *Results for PubMedQA*
 
@@ -96,7 +96,7 @@ We benchmark industry hallucination detection tools against each other and curre
 | CoT (GPT-4o-mini, sampling) | 0.844 | 0.838 | **0.871** | 0.808 |
 | Fewshot (GPT-4o) | 0.572 | 0.662 | 0.547 | 0.840 |
 | Lynx | 0.680 | 0.669 | 0.659 | 0.681 |
-| G-Eval Hallucination | 0.606 | 0.599 | 0.612 | 0.587 |
+| G-Eval Hallucination (GPT-4o) | 0.606 | 0.599 | 0.612 | 0.587 |
 
 *Results for FinanceBench*
 
