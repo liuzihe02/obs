@@ -11,8 +11,9 @@ import os
 from deepeval.metrics import GEval
 from deepeval.test_case import LLMTestCaseParams
 
-# %% preprocess data
-# TODO: KEEP RUNNING THESE FEW CELLS UNTIL WE ARE DONE WITH EVALS
+# %%# TODO: KEEP RUNNING THE BELOW CELLS UNTIL WE ARE DONE WITH EVALS
+# preprocess data
+
 
 # Initialize results file if it doesn't exist
 results_path = "../data/eval_geval_custom_1000samples.csv"
@@ -74,7 +75,7 @@ eval_df = pd.read_csv("../data/custom_1000samples.csv")
 results_df = pd.read_csv("../data/eval_geval_custom_1000samples.csv")
 # filter only those we have not done yet
 # USE A SMALLER BATCH SIZE
-eval_df = filter_batch(eval_df, results_df, 100)
+eval_df = filter_batch(eval_df, results_df, 103)
 eval_dataset = process_data_deepeval(eval_df)
 
 
@@ -125,5 +126,14 @@ results_df = pd.DataFrame(all_results)
 # use append mode
 results_df.to_csv(results_path, mode="a", header=False, index=False)
 
+
+# %%
+results_df = pd.read_csv(results_path)
+# Print number of duplicates and display them if any exist
+duplicate_ids = results_df[results_df["id"].duplicated()]
+if not duplicate_ids.empty:
+    print("length of df is", len(results_df))
+    print(f"Found {len(duplicate_ids)} duplicate IDs:")
+    print(duplicate_ids)
 
 # %%

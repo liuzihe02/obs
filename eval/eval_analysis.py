@@ -40,6 +40,15 @@ def analyze_eval_files(folder_path: str, dataset: str):
     # Read ground truth file
     gt_df = pd.read_csv(os.path.join(folder_path, "custom_1000samples.csv"))
 
+    # Check whether all the datapoint ids are unique
+    print(f"Total rows: {len(gt_df)}")
+    print(f"Unique IDs: {len(gt_df['id'].unique())}")
+    if len(gt_df) != len(gt_df["id"].unique()):
+        print(
+            "Duplicate IDs found:",
+            gt_df["id"].value_counts()[gt_df["id"].value_counts() > 1],
+        )
+
     # Filter ground truth for specific dataset if not "all"
     if dataset != "all":
         gt_df = gt_df[gt_df["source_ds"] == dataset]
