@@ -1,6 +1,6 @@
 # A Comparison of Hallucination Detection Tools and Research
 
-We benchmark industry hallucination detection tools against each other and current research methods. We use the [HaluBench](https://huggingface.co/datasets/PatronusAI/HaluBench) annotated examples to benchmark various hallucination detection tools on these samples, hence a black-box evaluation on prompts and answers only.
+We benchmark industry hallucination detection tools against each other and current research methods. We use the [HaluBench](https://huggingface.co/datasets/PatronusAI/HaluBench) annotated examples to benchmark various hallucination detection tools on these samples, hence a black-box evaluation on prompts and answers only. An overview of observability providers and hallucination detection methods is available [here]()
 
 ## Results
 
@@ -149,7 +149,7 @@ We repeat the same prompt 5 times and take the average score.
 
 **ChainPoll**
 
-Combining chain of thought reasoning with sampling, detailed [here](https://arxiv.org/abs/2310.18344)
+Combining chain of thought reasoning with sampling, detailed [here](https://arxiv.org/abs/2310.18344). Research done by Galileo AI.
 
 ### ARES
 
