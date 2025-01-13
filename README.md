@@ -1,6 +1,6 @@
 # A Comparison of Hallucination Detection Tools and Research
 
-We benchmark industry hallucination detection tools against each other and current research methods. We use the [HaluBench](https://huggingface.co/datasets/PatronusAI/HaluBench) annotated examples to benchmark various hallucination detection tools on these samples, hence a black-box evaluation on prompts and answers only. An overview of observability providers and hallucination detection methods is available [here]()
+We benchmark industry hallucination detection tools against each other and current research methods. We use the [HaluBench](https://huggingface.co/datasets/PatronusAI/HaluBench) annotated examples to benchmark various hallucination detection tools on these samples, hence a black-box evaluation on prompts and answers only. An overview of observability providers and hallucination detection methods is available [here](https://drive.google.com/file/d/1O6quCTEn2L7Xew5IqTx2eYbbSmzgLMdi/view?usp=sharing).
 
 ## Results
 
